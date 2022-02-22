@@ -5,12 +5,14 @@ html, body {
     font-family: 'Lato', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background-color: white;
     color: Black;
 }
 *{
     box-sizing: border-box;
     margin: 0;
+    a{
+        text-decoration: none;
+    }
 }
 `;
 
