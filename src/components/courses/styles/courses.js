@@ -88,6 +88,7 @@ export const Cards = styled.div`
     &:hover{
         transform: scale(1.07);
         z-index: 2;
+        box-shadow: 0px 4px 50px rgba(0, 0, 0, 0.1);
     }
 `
 export const CardHeadLine = styled.p`

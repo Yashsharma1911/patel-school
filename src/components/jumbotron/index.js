@@ -1,5 +1,5 @@
 import React from 'react'
-import { Container, Left, Right, ImageBackGround, Img, Heading, Text, Button, Div } from './styles/jumbotron'
+import { Container, Left, Right, ImageBackGround, Img, Heading, Text, Button, Div, FeatureDiv, SmallText, IconImg, TextWrap } from './styles/jumbotron'
 
 export default function Jumbotron({ children, ...restProps }) {
     return <Container {...restProps}>{children}</Container>
@@ -35,4 +35,20 @@ Jumbotron.Button = function JumbotronButton({ children, ...restProps }) {
 
 Jumbotron.Div = function JumbotronDiv({ children, ...restProps }) {
     return <Div {...restProps}>{children}</Div>
+}
+
+Jumbotron.SmallText = function JumbotronSmallText({ children, ...restProps }) {
+    return <SmallText {...restProps}>{children}</SmallText>
+}
+
+Jumbotron.IconImg = function JumbotronIcomImg({ children, ...restProps }) {
+    return <IconImg {...restProps}>{children}</IconImg>
+}
+
+Jumbotron.FeatureDiv = function JumbotronFeatureDiv({ children, ...restProps }) {
+    return <FeatureDiv {...restProps}>{children}</FeatureDiv>
+}
+
+Jumbotron.TextWrap = function JumbotronTextWrap({ children, ...restProps }) {
+    return <TextWrap {...restProps}>{children}</TextWrap>
 }

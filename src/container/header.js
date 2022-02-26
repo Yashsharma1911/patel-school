@@ -1,9 +1,7 @@
 import React, { useState } from 'react';
 import Header from '../components/header';
-import logo from '../asests/images/icons/menu-icon.svg';
-import CrossLogo from '../asests/images/icons/akar-icons_cross.svg';
 import * as ROUTES from '../constants/routes';
-import MenuBg from '../asests/images/menu-bg.svg'
+
 
 export default function HeaderContainer({ children }) {
     const [burgerStatus, setBurgerStatus] = useState(false);
@@ -22,10 +20,10 @@ export default function HeaderContainer({ children }) {
                     <Header.Text>Login</Header.Text>
                 </Header.Profile>
 
-                <Header.MenuLogo src={logo} onClick={() => setBurgerStatus(true)} alt="menu-logo" />
+                <Header.MenuLogo src="images/icons/menu-icon.svg" onClick={() => setBurgerStatus(true)} alt="menu-logo" />
                 <Header.BurgerMenu show={burgerStatus}>
                     <Header.Div>
-                        <Header.CrossButton src={CrossLogo} onClick={() => setBurgerStatus(false)} />
+                        <Header.CrossButton src="images/icons/akar-icons_cross.svg" onClick={() => setBurgerStatus(false)} />
                         <Header.MenuButtonLink to={ROUTES.COURSES} color="#DDE7F8">Courses</Header.MenuButtonLink>
                         <Header.MenuButtonLink to={ROUTES.STUDENT} color="#FDEED8">Students</Header.MenuButtonLink>
                         <Header.MenuButtonLink to={ROUTES.REGISTRATION} color="#FFF8D6">Registration</Header.MenuButtonLink>
@@ -33,7 +31,7 @@ export default function HeaderContainer({ children }) {
                         <Header.MenuButtonLink to={ROUTES.SIGN_IN} style={{ backgroundColor: '#000', color: '#fff' }} >Login</Header.MenuButtonLink>
                     </Header.Div>
                 </Header.BurgerMenu>
-                <Header.MenuBgImg src={MenuBg} />
+                <Header.MenuBgImg src="images/menu-bg.svg" />
             </Header.Frame>
             {children}
         </Header>
