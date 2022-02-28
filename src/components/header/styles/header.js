@@ -19,18 +19,16 @@ export const Frame = styled.div`
     align-items: center;
     width: 100%;
     height: 42px ;
-`;
-
+`
 export const Text = styled.p`
     display: block;
-    font-size: 14px;
+    font-size: 16px;
     color: white;
     font-family: Lato;
     font-style: normal;
     font-weight: normal;
     line-height: 19px;
-`;
-
+`
 export const Logo = styled(ReactRouterLink)`
     font-size: 25px;
     font-style: normal;
@@ -46,11 +44,10 @@ export const Logo = styled(ReactRouterLink)`
     @media(max-width: 298px){
         font-size: 22px;
     }
-`;
-
+`
 export const ButtonLink = styled(ReactRouterLink)`
     display: block;
-    font-size: 14px;
+    font-size: 16px;
     color: #000000;
     font-family: Lato;
     font-style: normal;
@@ -58,7 +55,7 @@ export const ButtonLink = styled(ReactRouterLink)`
     line-height: 19px;
     text-decoration: none;
     transition: opacity 0.2s;
-`;
+`
 export const Menu = styled.div`
     display: flex;
     flex-direction: row;
@@ -76,7 +73,7 @@ export const Menu = styled.div`
         display: none;
     }
 
-`;
+`
 export const Profile = styled(ReactRouterLink)`
     width: 98px;
     height: 100%;
@@ -102,8 +99,7 @@ export const MenuLogo = styled.img`
     @media(max-width: 1000px){
         display: block;
     }
-`;
-
+`
 export const MenuButtonLink = styled(ReactRouterLink)`
     display: block;
     font-size: 14px;
@@ -118,7 +114,6 @@ export const MenuButtonLink = styled(ReactRouterLink)`
     ${({ color }) => color && `border-color: ${color}`};
     padding: 15px 149px 13px 34px;
 `
-
 export const BurgerMenu = styled.div`
     display: flex;
     flex-direction: column;
@@ -149,8 +144,7 @@ export const BurgerMenu = styled.div`
             margin-top: 64px;
         }
     }
-`;
-
+`
 export const CrossButton = styled.img`
     position: absolute;
     top: 42px;

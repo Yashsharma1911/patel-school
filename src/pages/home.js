@@ -5,7 +5,9 @@ import JumbotronContainer from '../container/jumbotron';
 import JumboReverseContainer from '../container/jumboReverse';
 import ApplyContainer from '../container/apply';
 import PreparesContainer from '../container/prepares';
-import { Feature } from '../components';
+import QuoteContainer from '../container/quote';
+import FooterContainer from '../container/footer';
+import { Feature, AttentionLine } from '../components';
 import * as ROUTES from '../constants/routes';
 
 export default function Home() {
@@ -31,6 +33,11 @@ export default function Home() {
             <ApplyContainer />
             <JumboReverseContainer />
             <PreparesContainer />
+            <QuoteContainer />
+            <AttentionLine>
+                <AttentionLine.Text>Go Apply. <AttentionLine.SpanText>It's Free. </AttentionLine.SpanText>Start Learning</AttentionLine.Text>
+            </AttentionLine>
+            <FooterContainer />
         </>
     );
 }
