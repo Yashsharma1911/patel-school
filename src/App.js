@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, } from 'react-router-dom';
-import { Home, Signup, Signin, Student, Courses, Result, Registration, Browse } from './pages';
+import { Home, Signup, Signin, Student, Courses, Result, Registration, Browse, Admission } from './pages';
 // import HeaderContainer from '../container/header';
 import * as ROUTES from './constants/routes'
 
@@ -17,6 +17,7 @@ function App() {
           <Route path={ROUTES.RESULT} element={<Result />} />
           <Route path={ROUTES.REGISTRATION} element={<Registration />} />
           <Route path={ROUTES.BROWSE} element={<Browse />} />
+          <Route path={ROUTES.ADMISSION} element={<Admission />} />
         </Routes>
       </Router>
     </>

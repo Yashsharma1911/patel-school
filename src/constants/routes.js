@@ -6,3 +6,4 @@ export const STUDENT = '/student';
 export const REGISTRATION = '/registration';
 export const RESULT = '/result';
 export const COURSES = '/courses';
+export const ADMISSION = '/admissionform';

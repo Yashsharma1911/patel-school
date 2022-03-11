@@ -7,3 +7,7 @@ export { default as Prepares } from './prepares';
 export { default as Quote } from './quote';
 export { default as AttentionLine } from './attentionLine';
 export { default as Footer } from './footer';
+export { default as DocRequirement } from './docRequirement';
+export { default as AdmissionForm } from './admissionForm';
+export { default as AdmissionHeading } from './admissionHeading';
+export { default as AdmissionUpload } from './admissionUpload';
