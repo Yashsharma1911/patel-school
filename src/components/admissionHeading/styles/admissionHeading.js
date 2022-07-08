@@ -7,6 +7,11 @@ export const Container = styled.div`
     max-width: 417px;
     width: 100%;
     margin: 61px auto 0 auto;
+
+    @media(max-width: 600px){
+        width: 220px;
+        margin-top: 116px;
+    }
 `
 export const Text = styled.p`
     font-style: normal;
@@ -14,6 +19,10 @@ export const Text = styled.p`
     font-size: 55px;
     line-height: 116%;
     color: #000000;
+
+    @media (max-width: 600px){
+        font-size: 29px;
+    }
 `
 export const Div = styled.div`
     position: absolute;
@@ -24,4 +33,8 @@ export const Div = styled.div`
     background: #FFC839;
     border-radius: 80.5px 80.5px 80.5px 0px;
     z-index: -1;
+    @media(max-width: 600px){
+        width: 39px;
+        height: 39px;
+    }
 `

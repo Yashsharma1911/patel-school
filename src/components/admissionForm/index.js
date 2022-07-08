@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Section, FormContainer, Div, SectionDetails, SectionUpload, Text, Label, Border, Button, Input, FormBase, InputWrap, Select, Option } from './styles/admissionForm';
+import { Container, Section, FormContainer, Div, SectionDetails, SectionUpload, Text, Label, Border, Button, Input, FormBase, InputWrap, Select, Option, LabelRequired } from './styles/admissionForm';
 
 export default function AdmissionForm({ children, ...restProps }) {
     return <Container {...restProps}>{children}</Container>
@@ -59,4 +59,8 @@ AdmissionForm.Select = function AdmissionFormSelect({ children, ...restProps }) 
 
 AdmissionForm.Option = function AdmissionFormOption({ children, ...restProps }) {
     return <Option {...restProps}>{children}</Option>
+}
+
+AdmissionForm.LabelRequired = function AdmissionFormLabelRequired({ children, ...restProps }) {
+    return <LabelRequired {...restProps}>{children}</LabelRequired>
 }

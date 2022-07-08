@@ -11,3 +11,4 @@ export { default as DocRequirement } from './docRequirement';
 export { default as AdmissionForm } from './admissionForm';
 export { default as AdmissionHeading } from './admissionHeading';
 export { default as AdmissionUpload } from './admissionUpload';
+export { default as Thanks } from './thanks';

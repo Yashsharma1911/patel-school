@@ -39,7 +39,7 @@ Header.MenuLogo = function HeaderMenuLogo({ ...restProps }) {
     return <MenuLogo {...restProps} />
 };
 
-Header.BurgerMenu = function HeaderBurgerManu({ children, ...restProps }) {
+Header.BurgerMenu = function HeaderBurgerMenu({ children, ...restProps }) {
     return <BurgerMenu {...restProps}>{children}</BurgerMenu>
 }
 
