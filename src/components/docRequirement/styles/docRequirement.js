@@ -1,5 +1,10 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components'
 import { Link as ReactRouterLink } from 'react-router-dom'
+
+const fadeAnimation = keyframes`
+    0% { opacity: 0; transform: translateY(80px);}
+    100% { opacity: 1; transform: translateY(0px)}
+`
 
 export const Container = styled.div`
     display: flex;
@@ -61,10 +66,17 @@ export const DocContainer = styled.div`
     flex-direction: row;
     width: 100%;
     max-width: 591px;
+    opacity: 0;
     border: 1px solid ${({ color }) => color};
     border-radius: 17px 17px 0px 17px;
     transition: all 0.25s;
     margin-bottom: 14px;
+    animation-name: ${fadeAnimation};
+    animation-duration: 0.7s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease;
+    animation-delay: ${({ order }) => order * 0.2}s;
+    
 
     &:hover{
         background-color: ${({ color }) => color};

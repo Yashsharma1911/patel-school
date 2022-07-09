@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react'
-import Gallery from 'react-photo-gallery'
-import { db, storage } from "../lib/firebase.prod";
-import { ref, uploadBytes, listAll, getDownloadURL } from "firebase/storage";
-import { v4 } from "uuid";
-import { addDoc, serverTimestamp, collection } from "firebase/firestore";
+// import Gallery from 'react-photo-gallery'
+import { storage } from "../lib/firebase.prod";
+import { ref, listAll, getDownloadURL } from "firebase/storage";
+import HeaderContainer from '../container/header'
+import MaintenanceContainer from '../container/maintenance'
 
 const photos = [
 
@@ -28,6 +28,10 @@ export default function GalleryImage() {
     }, []);
 
     return (
-        <Gallery photos={photos} />
+        <>
+            <HeaderContainer />
+            <MaintenanceContainer />
+            {/* <Gallery photos={photos} /> */}
+        </>
     )
 }

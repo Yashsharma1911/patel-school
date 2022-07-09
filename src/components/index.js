@@ -12,3 +12,4 @@ export { default as AdmissionForm } from './admissionForm';
 export { default as AdmissionHeading } from './admissionHeading';
 export { default as AdmissionUpload } from './admissionUpload';
 export { default as Thanks } from './thanks';
+export { default as Maintenance } from './maintenance';

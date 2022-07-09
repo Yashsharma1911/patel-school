@@ -6,6 +6,7 @@ export default function CoursesContainer() {
         <>
             <Courses>
                 <Courses.Heading>Popular Courses</Courses.Heading>
+
                 <Courses.Div>
                     <Courses.Cards bg="#DDE7F8">
                         <Courses.Circle bg="#9DB9EC">

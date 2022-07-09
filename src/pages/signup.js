@@ -1,7 +1,12 @@
 import React from 'react'
+import HeaderContainer from '../container/header'
+import MaintenanceContainer from '../container/maintenance'
 
-export default function signup() {
+export default function Signup() {
     return (
-        <h1>signup</h1>
+        <>
+            <HeaderContainer />
+            <MaintenanceContainer />
+        </>
     )
 }

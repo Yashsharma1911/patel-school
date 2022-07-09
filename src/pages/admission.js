@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import HeaderContainer from '../container/header'
-import AdmissionContainer from '../container/admission'
+import AdmissionContainer from '../container/admission/admission'
 import Thanks from '../components/thanks'
 
 export default function Admission() {

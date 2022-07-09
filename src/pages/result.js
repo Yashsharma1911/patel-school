@@ -1,7 +1,12 @@
 import React from 'react'
+import HeaderContainer from '../container/header'
+import MaintenanceContainer from '../container/maintenance'
 
 export default function Result() {
     return (
-        <h1>Result</h1>
+        <>
+            <HeaderContainer />
+            <MaintenanceContainer />
+        </>
     )
 }
