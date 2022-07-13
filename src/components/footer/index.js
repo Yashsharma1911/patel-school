@@ -1,13 +1,16 @@
 import React from 'react';
-import { Container, Text, Row, Column, PageLink, ImgSocialIcon, ImgIcon, Logo, Div } from './styles/footer';
+import { Container, Text, Row, Column, PageLink, ImgSocialIcon, ImgIcon, Logo, Div, Anchor } from './styles/footer';
 import { Link } from 'react-router-dom';
 
 export default function Footer({ children, ...restProps }) {
     return <Container {...restProps}>{children}</Container>
 }
 
-Footer.Text = function FooterText({ children, ...restProps }) {
-    return <Text {...restProps}>{children}</Text>
+Footer.Text = function FooterText({ mailto, children, ...restProps }) {
+    return <Text {...restProps} onClick={(e) => {
+        window.location.href = mailto;
+        e.preventDefault();
+    }}>{children}</Text>
 }
 
 Footer.Row = function FooterRow({ children, ...restProps }) {
@@ -20,6 +23,10 @@ Footer.Column = function FooterColumn({ children, ...restProps }) {
 
 Footer.PageLink = function FooterPageLink({ children, ...restProps }) {
     return <PageLink {...restProps}>{children}</PageLink>
+}
+
+Footer.Anchor = function FooterAnchor({ children, ...restProps }) {
+    return <Anchor {...restProps}>{children}</Anchor>
 }
 
 Footer.ImgSocialIcon = function FooterImgSocialIcon({ to, ...restProps }) {

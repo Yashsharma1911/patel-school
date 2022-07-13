@@ -9,9 +9,10 @@ const fadeAnimation = keyframes`
 export const Container = styled.div`
     display: flex;
     width: 100%;
-    height: 80vh;
+    height: 100%;
     align-items: center;
     justify-content: center;
+    margin-top: 25px;
 `
 
 export const SubContainer = styled.div`

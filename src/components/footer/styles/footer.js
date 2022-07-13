@@ -15,15 +15,20 @@ export const Container = styled.div`
   }
 `;
 
-export const Text = styled.p`
+export const Text = styled(ReactRouterLink)`
   font-style: normal;
   font-weight: normal;
   font-size: 15px;
   line-height: 164%;
   color: #000000;
   text-align: center;
-  margin-top: 74px;
+  margin-top: ${({ margintop }) => margintop ? margintop : "0"}px;
+
+  &:hover {
+    text-decoration: underline;
+  }
 `;
+
 export const Row = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -85,5 +90,21 @@ export const Column = styled.div`
 export const ImgSocialIcon = styled.img`
   margin-bottom: 0px;
 `;
-export const ImgIcon = styled.img``;
+export const ImgIcon = styled.img`
+  margin-right: 15px;
+`;
 export const Logo = styled.img``;
+export const Anchor = styled.a`
+font-style: normal;
+font-weight: normal;
+font-size: 18px;
+line-height: 164%;
+color: #000000;
+margin-top: 20px;
+width: fit-content;
+
+&:hover {
+  text-decoration: underline;
+}
+
+`;

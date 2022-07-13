@@ -9,14 +9,15 @@ export default function FooterContainer({ children, ...restProps }) {
                     <Footer.Column>
                         <Footer.Logo to="/" src="images/icons/school-logo.svg" />
                         <Footer.Div>
-                            <Footer.PageLink to="#">Mahuar Colony, Shivpuri Road, Karera, India</Footer.PageLink>
+                            <Footer.Anchor href="https://www.google.com/maps/place/Patel+Higher+Secondary+School+Karera/@25.44892,78.1170141,16.99z/data=!4m5!3m4!1s0x397745f08ea40515:0xc1ff0cb845010b98!8m2!3d25.4489177!4d78.1192156">Mahuar Colony, Shivpuri Road, Karera, India</Footer.Anchor>
                             <Footer.Div>
                                 <Footer.ImgIcon src="images/icons/phone-icon-black.svg" />
-                                <Footer.Text>(+91)9425489825</Footer.Text>
+                                <Footer.Text to="#" mailto="tel:9425489825">+91 9425489825</Footer.Text>
                             </Footer.Div>
                             <Footer.Div>
                                 <Footer.ImgIcon src="images/icons/email-icon-black.svg" />
-                                <Footer.Text>patelschool@gmail.com</Footer.Text>
+                                <Footer.Text to="#"
+                                    mailto="mailto:mukeshsharma@patelvidhyalaya.com">mukeshsharma@patelvidhyalaya.com</Footer.Text>
                             </Footer.Div>
                         </Footer.Div>
                     </Footer.Column>
@@ -44,7 +45,7 @@ export default function FooterContainer({ children, ...restProps }) {
                         </Footer.Div>
                     </Footer.Column>
                 </Footer.Row>
-                <Footer.Text>Copyright 2022 © Patel School. All rights reserved</Footer.Text>
+                <Footer.Text to="#" margintop="74">Copyright 2022 © Patel School. All rights reserved</Footer.Text>
             </Footer>
         </>
     )

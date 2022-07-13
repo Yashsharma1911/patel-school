@@ -854,7 +854,7 @@ export default function AdmissionContainer({ setIsThanks }) {
                   </AdmissionForm.InputWrap>
                 </AdmissionForm.Div>
 
-                <AdmissionForm.Div display={values.class >= 11 ? "none" : ""}>
+                <AdmissionForm.Div display={(values.class >= 11 || values.class <= 5 || values.class === "LKG" || values.class === "UKG" || values.class === "Nursery") ? "none" : ""}>
                   <AdmissionForm.InputWrap>
                     <AdmissionForm.LabelRequired htmlFor="languageOne">
                       Language 3
