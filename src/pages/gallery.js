@@ -48,7 +48,6 @@ export default function GalleryImage() {
         }
         getLink();
     }, []);
-    console.log(images);
 
     return (
         <>
