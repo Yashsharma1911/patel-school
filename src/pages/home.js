@@ -1,10 +1,10 @@
 import React from 'react';
 import HeaderContainer from '../container/header';
-import CoursesContainer from '../container/courses';
-import JumbotronContainer from '../container/jumbotron';
-import JumboReverseContainer from '../container/jumboReverse';
+import CoursesContainer from '../container/@home/courses';
+import JumbotronContainer from '../container/@home/jumbotron';
+import JumboReverseContainer from '../container/@home/jumboReverse';
 import ApplyContainer from '../container/apply';
-import PreparesContainer from '../container/prepares';
+import PreparesContainer from '../container/@home/prepares';
 import QuoteContainer from '../container/quote';
 import FooterContainer from '../container/footer';
 import { Feature, AttentionLine } from '../components';

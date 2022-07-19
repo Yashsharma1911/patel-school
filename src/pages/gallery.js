@@ -1,37 +1,61 @@
-import React, { useEffect } from 'react'
-// import Gallery from 'react-photo-gallery'
+import React, { useEffect, useState } from 'react'
 import { storage } from "../lib/firebase.prod";
 import { ref, listAll, getDownloadURL } from "firebase/storage";
 import HeaderContainer from '../container/header'
-import MaintenanceContainer from '../container/maintenance'
+import LoaderContainer from '../container/loader'
+import Gallery from '../components/gallery'
+import ImageGallery from 'react-image-gallery';
+import "./gallery.css";
 
-const photos = [
+const property = {
+    showIndex: false,
+    showBullets: false,
+    infinite: true,
+    showThumbnails: true,
+    showFullscreenButton: true,
+    showGalleryFullscreenButton: true,
+    showPlayButton: true,
+    showGalleryPlayButton: true,
+    showNav: true,
+    isRTL: false,
+    slideDuration: 450,
+    slideInterval: 2000,
+    slideOnThumbnailOver: false,
+    thumbnailPosition: 'bottom',
+    showVideo: {},
+    useWindowKeyDown: true,
+}
 
-];
 export default function GalleryImage() {
+    const [images, setImages] = useState([]);
+    const [stateCheck, setStateCheck] = useState(false);
     useEffect(() => {
         const imageRef = ref(storage, `galleryImages`);
         const getLink = () => {
             listAll(imageRef).then((response) => {
                 response.items.forEach((item) => {
                     getDownloadURL(item).then((url) => {
-                        photos.push({
-                            src: url,
-                            width: 2,
-                            height: 2
-                        })
+                        setImages(prev => [...prev, {
+                            original: url,
+                            thumbnail: url,
+                            loading: "lazy"
+                        }]);
                     });
+
                 });
+                setStateCheck(true);
             });
         }
         getLink();
     }, []);
+    console.log(images);
 
     return (
         <>
             <HeaderContainer />
-            <MaintenanceContainer />
-            {/* <Gallery photos={photos} /> */}
+            <Gallery>
+                {stateCheck === true ? <ImageGallery items={images} {...property} /> : <LoaderContainer />}
+            </Gallery>
         </>
     )
 }

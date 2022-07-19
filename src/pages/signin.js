@@ -1,12 +1,14 @@
 import React from 'react'
 import HeaderContainer from '../container/header'
-import MaintenanceContainer from '../container/maintenance'
+import LoginAsContainer from '../container/login/loginAs'
+import FooterContainer from '../container/footer';
 
 export default function Signin() {
     return (
         <>
             <HeaderContainer />
-            <MaintenanceContainer />
+            <LoginAsContainer />
+            <FooterContainer />
         </>
     )
 }

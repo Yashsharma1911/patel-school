@@ -13,6 +13,9 @@ export const Container = styled.div`
     align-items: center;
     justify-content: center;
     margin-top: 25px;
+    @media (max-width: 428px) {
+        margin-top: 65px;
+    }
 `
 
 export const SubContainer = styled.div`

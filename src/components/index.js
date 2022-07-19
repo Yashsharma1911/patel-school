@@ -13,3 +13,6 @@ export { default as AdmissionHeading } from './admissionHeading';
 export { default as AdmissionUpload } from './admissionUpload';
 export { default as Thanks } from './thanks';
 export { default as Maintenance } from './maintenance';
+export { default as LoginAs } from './login/loginAs';
+export { default as Gallery } from './gallery';
+export { default as Load } from './load';

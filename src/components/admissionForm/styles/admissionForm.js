@@ -176,6 +176,6 @@ export const Select = styled.select`
   margin-top: 13px;
 `;
 export const Option = styled.option`
-  background: black;
-  border: 1px solid #dde7f8;
+  background-image: none;
+  background-color: #ffffff;
 `;
