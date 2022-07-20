@@ -63,9 +63,10 @@ const files = {
 };
 
 export default function AdmissionContainer({ setIsThanks }) {
-  const [toggleState, setToggleState] = useState(1);
+  const [toggleState, setToggleState] = useState(2);
   const [values, setValues] = useState(initialValues);
   const [fileValues, setFileValues] = useState(files);
+  const [checkClick, setCheckClick] = useState(false);
   // eslint-disable-next-line no-unused-vars
   const [isValid, setIsValid] = useState(false);
 
@@ -146,7 +147,7 @@ export default function AdmissionContainer({ setIsThanks }) {
     }
   }
 
-  // managin input
+  // managing input
   const handleInputChange = (e) => {
     const { name, value } = e.target;
 
@@ -174,25 +175,18 @@ export default function AdmissionContainer({ setIsThanks }) {
       ...values,
       timestamp: serverTimestamp(),
     });
+
+    // to call new thanks component after adding data 
     setIsThanks(true);
   };
-
-  // const getLink = (imageRef, file) => {
-  //   listAll(imageRef).then((response) => {
-  //     response.items.forEach((item) => {
-  //       getDownloadURL(item).then((url) => {
-  //         setValues({
-  //           ...values,
-  //           documentURL: { ...values.documentURL, [file]: url },
-  //         });
-  //       });
-  //     });
-  //   });
-  // }
 
   // upload files values to firebase storage
   const handleFileUpload = async (e) => {
     e.preventDefault();
+    console.log("calling bro");
+    //to disable submit button
+    setCheckClick(true);
+
     let promises = [];
     let promisesTwo = [];
     for (const file in fileValues) {
@@ -1404,8 +1398,9 @@ export default function AdmissionContainer({ setIsThanks }) {
 
                 </AdmissionUpload.Div>
 
-                <AdmissionForm.Button onClick={handleFileUpload}>
-                  Submit
+                <AdmissionForm.Button onClick={handleFileUpload} disabled={checkClick}>{
+                  checkClick === true ? "Loading..." : "Submit"
+                }
                 </AdmissionForm.Button>
               </AdmissionUpload.Form>
             </AdmissionUpload.Div>

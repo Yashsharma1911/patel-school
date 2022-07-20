@@ -110,7 +110,7 @@ export const Button = styled.button`
   font-size: 15px;
   transition: all 0.25s;
   margin-top: 49px;
-
+  opacity: ${({ disabled }) => disabled ? "0.8" : "1"};
   &:hover {
     opacity: 0.8;
   }
