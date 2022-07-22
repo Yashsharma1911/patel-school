@@ -3,13 +3,13 @@ import { getFirestore } from "firebase/firestore";
 import { getStorage } from "firebase/storage";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDe4ZNI_Sq1Gq9yytIQfEhXh_aphcZot9M",
-  authDomain: "patel-school-karera.firebaseapp.com",
-  projectId: "patel-school-karera",
-  storageBucket: "patel-school-karera.appspot.com",
-  messagingSenderId: "1084716353680",
-  appId: "1:1084716353680:web:ea0e9e85f45a7201903015",
-  measurementId: "G-RKCD107XJ1",
+  apiKey: process.env.REACT_APP_API_KEY,
+  authDomain: process.env.REACT_APP_AUTHDOMAIN,
+  projectId: process.env.REACT_APP_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_STORAGEBUCKET,
+  messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
+  appId: process.env.REACT_APP_APP_ID,
+  measurementId: process.env.MESUREMENT_ID,
 };
 
 // Initialize Firebase

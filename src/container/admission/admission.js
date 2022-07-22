@@ -183,7 +183,6 @@ export default function AdmissionContainer({ setIsThanks }) {
   // upload files values to firebase storage
   const handleFileUpload = async (e) => {
     e.preventDefault();
-    console.log("calling bro");
     //to disable submit button
     setCheckClick(true);
 
