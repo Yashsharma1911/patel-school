@@ -63,7 +63,7 @@ const files = {
 };
 
 export default function AdmissionContainer({ setIsThanks }) {
-  const [toggleState, setToggleState] = useState(2);
+  const [toggleState, setToggleState] = useState(1);
   const [values, setValues] = useState(initialValues);
   const [fileValues, setFileValues] = useState(files);
   const [checkClick, setCheckClick] = useState(false);
