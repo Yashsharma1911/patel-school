@@ -16,7 +16,7 @@ export default function LoginAsContainer() {
                         <LoginAs.Img src="images/login-teacher.svg" />
                     </LoginAs.Link>
                     <LoginAs.Link href="http://simptionschoolsoftware.com/patelschoolkarera/" target="_blank" order="6">
-                        <LoginAs.Img src="images/login-simption.svg" />
+                        <LoginAs.Img src="images/login-school.svg" />
                     </LoginAs.Link>
                 </LoginAs.ImgContainer>
             </LoginAs.SubContainer>
