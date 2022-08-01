@@ -125,6 +125,9 @@ export const Input = styled.input`
   font-size: 15px;
   margin-top: 13px;
 
+  &:hover {
+    border: 1px solid black;
+  }
   &:focus {
     border: 2px solid #2458b8;
   }

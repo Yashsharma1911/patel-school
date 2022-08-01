@@ -12,7 +12,7 @@ export default function JumbotronContainer({ children, ...restProps }) {
                 </Jumbotron.Left>
                 <Jumbotron.Right>
                     <Jumbotron.Div>
-                        <Jumbotron.Heading>Descover Over School</Jumbotron.Heading>
+                        <Jumbotron.Heading>Discover Our School</Jumbotron.Heading>
                         <Jumbotron.Img src="images/icons/Star-pink.svg" />
                     </Jumbotron.Div>
                     <Jumbotron.Text>Patel Higher Secondary school established in Karera (M.P.) in 1993.
