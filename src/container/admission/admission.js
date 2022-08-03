@@ -170,9 +170,10 @@ export default function AdmissionContainer({ setIsThanks }) {
   };
 
   // upload data
-  const handleAdd = async () => {
+  const handleAdd = async (PersonalDetails) => {
+    console.log("PersonalDetails", PersonalDetails)
     await addDoc(collection(db, "students"), {
-      ...values,
+      ...PersonalDetails,
       timestamp: serverTimestamp(),
     });
 
@@ -186,36 +187,38 @@ export default function AdmissionContainer({ setIsThanks }) {
     //to disable submit button
     setCheckClick(true);
 
-    let promises = [];
-    let promisesTwo = [];
-    for (const file in fileValues) {
-      if (fileValues[file] !== "") {
-        const fileRef = ref(
-          storage,
-          `pdfFiles/${values.name} | ${values.father}/${file}/${fileValues[file].name + v4()
-          }`
-        );
-        promises.push(
-          uploadBytes(fileRef, fileValues[file]).then((snapshot) => {
+    let PersonalDetails = values;
+
+    try {
+      const uploadFile = await Promise.all(Object.keys(fileValues).map(async (key) => {
+        if (fileValues[key] !== "") {
+          const fileRef = ref(
+            storage,
+            `pdfFiles/${PersonalDetails.name} | ${PersonalDetails.father}/${key}/${fileValues[key].name + v4()
+            }`
+          );
+          return uploadBytes(fileRef, fileValues[key]).then(async (snapshot) => {
             // get url of uploaded file
-            return getDownloadURL(snapshot.ref).then((url) => {
-              promisesTwo.push(url);
-              // update values imediatly
-              setValues({
-                ...values,
-                documentURL: { ...values.documentURL, [file]: url },
-              });
-            });
-          }));
+            const UrlData = await getDownloadURL(snapshot.ref)
+            if (UrlData) {
+              PersonalDetails = { ...PersonalDetails, documentURL: { ...PersonalDetails.documentURL, [key]: UrlData } };
+            }
+            return UrlData;
+          })
+        }
+        else {
+          return "no file";
+        }
+      }))
+
+      if (uploadFile) {
+        handleAdd(PersonalDetails)
       }
+
     }
-    return Promise.all(promises).then(() => {
-      handleAdd();
+    catch (error) {
+      console.log(error)
     }
-    ).catch((error) => {
-      console.log("error: ", error);
-    }
-    );
   };
 
   const handleFiles = (e) => {
@@ -223,6 +226,7 @@ export default function AdmissionContainer({ setIsThanks }) {
     const value = e.target.files[0];
     setFileValues({ ...fileValues, [name]: value });
   };
+
 
   const callFileInput = (e) => {
     e.preventDefault();
