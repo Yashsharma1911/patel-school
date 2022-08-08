@@ -44,7 +44,7 @@ const initialValues = {
     adharCard: "",
     bankAccount: "",
     transferCertificate: "",
-    samagraId: "",
+    photo: "",
     incomeCertificate: "",
     optionalGradeMarkSheet: "",
     castCertificate: "",
@@ -56,14 +56,14 @@ const files = {
   adharCard: "",
   bankAccount: "",
   transferCertificate: "",
-  samagraId: "",
+  photo: "",
   incomeCertificate: "",
   optionalGradeMarkSheet: "",
   castCertificate: "",
 };
 
 export default function AdmissionContainer({ setIsThanks }) {
-  const [toggleState, setToggleState] = useState(1);
+  const [toggleState, setToggleState] = useState(2);
   const [values, setValues] = useState(initialValues);
   const [fileValues, setFileValues] = useState(files);
   const [checkClick, setCheckClick] = useState(false);
@@ -171,7 +171,6 @@ export default function AdmissionContainer({ setIsThanks }) {
 
   // upload data
   const handleAdd = async (PersonalDetails) => {
-    console.log("PersonalDetails", PersonalDetails)
     await addDoc(collection(db, "students"), {
       ...PersonalDetails,
       timestamp: serverTimestamp(),
@@ -1309,11 +1308,11 @@ export default function AdmissionContainer({ setIsThanks }) {
                   <AdmissionUpload.Div maxWidth="485.71" alignItems="flex-end" marginTop="35px">
                     <AdmissionUpload.Div flexDirection="column">
                       <AdmissionUpload.FileText>
-                        Samagra ID
+                        Student Photo (.jpeg ,png ,jpg)
                       </AdmissionUpload.FileText>
                       <AdmissionUpload.LabelContainer onClick={callConFileInput}>
                         <AdmissionUpload.FileIcon src="images/icons/file-icon-blue.svg" />
-                        <AdmissionUpload.FileText>{fileValues.samagraId !== "" ? fileValues.samagraId.name : "No file selected"}</AdmissionUpload.FileText>
+                        <AdmissionUpload.FileText>{fileValues.photo !== "" ? fileValues.photo.name : "No file selected"}</AdmissionUpload.FileText>
                       </AdmissionUpload.LabelContainer>
                     </AdmissionUpload.Div>
                     <AdmissionUpload.Button onClick={callFileInput}>
@@ -1322,9 +1321,9 @@ export default function AdmissionContainer({ setIsThanks }) {
                     <AdmissionUpload.FileInput
                       className="fileInput"
                       type="file"
-                      accept=".pdf,.doc"
+                      accept=".pdf,.doc, image/*"
                       onChange={handleFiles}
-                      name="samagraId"
+                      name="photo"
                     />
                   </AdmissionUpload.Div>
 
