@@ -12,7 +12,7 @@ export default function LoginAsContainer() {
                     <LoginAs.Link href="" order="2">
                         <LoginAs.Img src="images/login-student.svg" />
                     </LoginAs.Link>
-                    <LoginAs.Link order="4" href="https://dashboard.patelvidhyalaya.com/login" target="_blank" >
+                    <LoginAs.Link href="https://dashboard.patelvidhyalaya.com/login" target="_blank" order="4" >
                         <LoginAs.Img src="images/login-teacher.svg" />
                     </LoginAs.Link>
                     <LoginAs.Link href="http://simptionschoolsoftware.com/patelschoolkarera/" target="_blank" order="6">

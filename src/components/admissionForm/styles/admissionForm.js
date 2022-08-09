@@ -130,6 +130,7 @@ export const Input = styled.input`
   }
   &:focus {
     border: 2px solid #2458b8;
+    outline: none;
   }
 `;
 export const InputWrap = styled.div`

@@ -51,7 +51,7 @@ export default function Home() {
             </Fade>
             <Fade bottom>
                 <AttentionLine>
-                    <AttentionLine.Text>Go Apply. <AttentionLine.SpanText>It's Free. </AttentionLine.SpanText>Start Learning</AttentionLine.Text>
+                    <AttentionLine.Text>Go Apply. </AttentionLine.Text><AttentionLine.SpanText>It's Free. </AttentionLine.SpanText><AttentionLine.Text>Start Learning</AttentionLine.Text>
                 </AttentionLine>
             </Fade>
             <Fade bottom>
