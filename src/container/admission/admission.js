@@ -333,7 +333,7 @@ export default function AdmissionContainer({ setIsThanks }) {
       </AdmissionHeading>
 
       {toggleState === 1 ? (
-        <AdmissionForm>
+        <AdmissionForm data-cy="admission-form-student-details">
           <AdmissionForm.Section>
             <AdmissionForm.SectionDetails displayOnSmall>
               <AdmissionForm.Text color="#2458B8">
@@ -369,6 +369,7 @@ export default function AdmissionContainer({ setIsThanks }) {
                       placeholder="Full Name"
                       required="required"
                       id="name"
+                      data-cy="name"
                       autoFocus="autofocus"
                     />
                   </AdmissionForm.InputWrap>
@@ -382,6 +383,7 @@ export default function AdmissionContainer({ setIsThanks }) {
                       onChange={handleInputChange}
                       name="father"
                       id="father"
+                      data-cy="father"
                       placeholder="Father Name"
                     />
                   </AdmissionForm.InputWrap>
@@ -399,6 +401,7 @@ export default function AdmissionContainer({ setIsThanks }) {
                       name="mother"
                       placeholder="Full Name"
                       id="motherName"
+                      data-cy="motherName"
                     />
                   </AdmissionForm.InputWrap>
                   <AdmissionForm.InputWrap>
@@ -411,7 +414,7 @@ export default function AdmissionContainer({ setIsThanks }) {
                       onChange={handleInputChange}
                       name="dob"
                       id="dob"
-                      placeholder="dd/mm/yyyy"
+                      data-cy="dob"
                     />
                   </AdmissionForm.InputWrap>
                 </AdmissionForm.Div>
@@ -428,6 +431,7 @@ export default function AdmissionContainer({ setIsThanks }) {
                       name="childId"
                       placeholder="00000000"
                       id="childId"
+                      data-cy="childId"
                       maxLength="9"
                     />
                   </AdmissionForm.InputWrap>
@@ -442,6 +446,7 @@ export default function AdmissionContainer({ setIsThanks }) {
                       name="class"
                       required="required"
                       id="class"
+                      data-cy="class"
                     >
                       <AdmissionForm.Option value="Nursery">Nursery</AdmissionForm.Option>
                       <AdmissionForm.Option value="LKG">LKG</AdmissionForm.Option>
@@ -474,6 +479,7 @@ export default function AdmissionContainer({ setIsThanks }) {
                       name="state"
                       required="required"
                       id="state"
+                      data-cy="state"
                     >
                       <AdmissionForm.Option value="Select">
                         Select
@@ -574,6 +580,7 @@ export default function AdmissionContainer({ setIsThanks }) {
                       onChange={handleInputChange}
                       name="district"
                       id="district"
+                      data-cy="district"
                       placeholder="Enter District"
                       required="required"
                     />
@@ -591,6 +598,7 @@ export default function AdmissionContainer({ setIsThanks }) {
                       onChange={handleInputChange}
                       name="mobileNumber"
                       id="mobileNumber"
+                      data-cy="mobileNumber"
                       required="required"
                       placeholder="9999999999"
                       maxLength="10"
@@ -606,6 +614,7 @@ export default function AdmissionContainer({ setIsThanks }) {
                       onChange={handleInputChange}
                       name="town"
                       id="town"
+                      data-cy="town"
                       placeholder="Enter Town Name"
                     />
                   </AdmissionForm.InputWrap>
@@ -622,6 +631,7 @@ export default function AdmissionContainer({ setIsThanks }) {
                       onChange={handleInputChange}
                       name="parentMobileNumber"
                       id="parentMobileNumber"
+                      data-cy="parentMobileNumber"
                       placeholder="9999999999"
                       maxLength="10"
                     />
@@ -637,6 +647,7 @@ export default function AdmissionContainer({ setIsThanks }) {
                       name="medium"
                       required="required"
                       id="medium"
+                      data-cy="medium"
                     >
                       <AdmissionForm.Option value="Select">
                         Select
@@ -666,6 +677,7 @@ export default function AdmissionContainer({ setIsThanks }) {
                       name="nominationNumber"
                       placeholder="A19/162034/000"
                       id="nominationNumber"
+                      data-cy="nominationNumber"
                       maxLength="14"
                     />
                   </AdmissionForm.InputWrap>
@@ -679,6 +691,7 @@ export default function AdmissionContainer({ setIsThanks }) {
                       onChange={handleInputChange}
                       name="postOffice"
                       id="postOffice"
+                      data-cy="postOffice"
                       placeholder="Enter Post Office"
                     />
                   </AdmissionForm.InputWrap>
@@ -696,6 +709,7 @@ export default function AdmissionContainer({ setIsThanks }) {
                       name="fatherAnnualIncome"
                       placeholder="₹100000"
                       id="fatherAnnualIncome"
+                      data-cy="fatherAnnualIncome"
                     />
                   </AdmissionForm.InputWrap>
                   <AdmissionForm.InputWrap>
@@ -709,6 +723,7 @@ export default function AdmissionContainer({ setIsThanks }) {
                       name="admissionType"
                       required="required"
                       id="admissionType"
+                      data-cy="admissionType"
                     >
                       <AdmissionForm.Option value="English">
                         Regular
@@ -731,6 +746,7 @@ export default function AdmissionContainer({ setIsThanks }) {
                       onChange={handleInputChange}
                       name="permanentAddress"
                       id="permanentAddress"
+                      data-cy="permanentAddress"
                       placeholder="address"
                     />
                   </AdmissionForm.InputWrap>
@@ -744,6 +760,7 @@ export default function AdmissionContainer({ setIsThanks }) {
                       onChange={handleInputChange}
                       name="pinCode"
                       id="pinCode"
+                      data-cy="pinCode"
                       placeholder="000000"
                       maxLength="6"
                     />
@@ -763,6 +780,7 @@ export default function AdmissionContainer({ setIsThanks }) {
                       placeholder="0000-0000-0000"
                       required="required"
                       id="adharCardNumber"
+                      data-cy="adharCardNumber"
                       maxLength="14"
                     />
                   </AdmissionForm.InputWrap>
@@ -777,6 +795,7 @@ export default function AdmissionContainer({ setIsThanks }) {
                       name="group"
                       required={values.class <= 10 ? "" : "required"}
                       id="group"
+                      data-cy="group"
                       disabled={(values.class <= 10 || values.class === "LKG" || values.class === "UKG" || values.class === "Nursery") ? "disabled" : ""}
                     >
                       <AdmissionForm.Option value="Select">
@@ -819,6 +838,7 @@ export default function AdmissionContainer({ setIsThanks }) {
                       placeholder="Language 1"
                       required="required"
                       id="languageOne"
+                      data-cy="languageOne"
                       readOnly="readonly"
                       disabled="disabled"
                     />
@@ -833,6 +853,7 @@ export default function AdmissionContainer({ setIsThanks }) {
                       onChange={handleInputChange}
                       name="languageTwo"
                       id="languageTwo"
+                      data-cy="languageTwo"
                       placeholder="Language 2"
                       readOnly={(values.medium === "Hindi" && values.class > 10) ? "" : "readOnly"}
                       disabled={(values.medium === "Hindi" && values.class > 10) ? "" : "disabled"}
@@ -863,6 +884,7 @@ export default function AdmissionContainer({ setIsThanks }) {
                       onChange={handleInputChange}
                       required="required"
                       id="languageThree"
+                      data-cy="languageThree"
                       readOnly="readonly"
                       disabled="disabled"
                     />
@@ -882,6 +904,7 @@ export default function AdmissionContainer({ setIsThanks }) {
                       placeholder="eg. Mathematics"
                       required="required"
                       id="diversifiedSubjectOne"
+                      data-cy="diversifiedSubjectOne"
                       disabled={values.group === "Art" ? "" : "disabled"}
                     >
                       <AdmissionForm.Option value="Select">
@@ -957,6 +980,7 @@ export default function AdmissionContainer({ setIsThanks }) {
                       onChange={handleInputChange}
                       name="diversifiedSubjectTwo"
                       id="diversifiedSubjectTwo"
+                      data-cy="diversifiedSubjectTwo"
                       placeholder="eg. Physics"
                       disabled={values.group === "Art" ? "" : "disabled"}
                     >
@@ -1038,6 +1062,7 @@ export default function AdmissionContainer({ setIsThanks }) {
                       placeholder="eg. Chemistry"
                       required="required"
                       id="diversifiedSubjectThree"
+                      data-cy="diversifiedSubjectThree"
                       disabled={values.group === "Art" ? "" : "disabled"}
                     >
                       <AdmissionForm.Option value="Select">
@@ -1114,6 +1139,7 @@ export default function AdmissionContainer({ setIsThanks }) {
                       name="additionalSubject"
                       required="required"
                       id="additionalSubject"
+                      data-cy="additionalSubject"
                       disabled={(values.class <= 8 || values.class === "LKG" || values.class === "UKG" || values.class === "Nursery") ? "disabled" : ""}
                     >
                       <AdmissionForm.Option value="Select">
@@ -1156,6 +1182,7 @@ export default function AdmissionContainer({ setIsThanks }) {
                       onChange={handleInputChange}
                       name="category"
                       id="category"
+                      data-cy="category"
                     >
                       <AdmissionForm.Option value="Select">
                         Select
@@ -1180,17 +1207,18 @@ export default function AdmissionContainer({ setIsThanks }) {
                       onChange={handleInputChange}
                       name="referal"
                       id="referal"
+                      data-cy="referal"
                       placeholder="Referal"
                     />
                   </AdmissionForm.InputWrap>
                 </AdmissionForm.Div>
-                <AdmissionForm.Button>Submit</AdmissionForm.Button>
+                <AdmissionForm.Button data-cy="submit">Submit</AdmissionForm.Button>
               </AdmissionForm.FormBase>
             </AdmissionForm.Div>
           </AdmissionForm.FormContainer>
         </AdmissionForm>
       ) : (
-        <AdmissionUpload>
+        <AdmissionUpload data-cy="upload-section">
           <AdmissionForm.Section>
             <AdmissionForm.SectionDetails>
               <AdmissionForm.Text color="#90B12B">
@@ -1400,7 +1428,7 @@ export default function AdmissionContainer({ setIsThanks }) {
 
                 </AdmissionUpload.Div>
 
-                <AdmissionForm.Button onClick={handleFileUpload} disabled={checkClick}>{
+                <AdmissionForm.Button data-cy="final-submit" onClick={handleFileUpload} disabled={checkClick}>{
                   checkClick === true ? "Loading..." : "Submit"
                 }
                 </AdmissionForm.Button>

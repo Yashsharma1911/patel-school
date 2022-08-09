@@ -14,7 +14,7 @@ import Fade from 'react-reveal/Fade';
 export default function Home() {
     return (
         <>
-            <HeaderContainer>
+            <HeaderContainer data-cy="header-container">
                 <Fade bottom duration={1700}>
                     <Feature>
                         <Feature.Left>

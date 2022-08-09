@@ -10,7 +10,7 @@ export default function Admission() {
         <>
             <HeaderContainer />
             {isThanks ?
-                <Thanks>
+                <Thanks data-cy="thank-component">
                     <Thanks.SubContainer>
                         <Thanks.Img src="/images/thanks-thumb.svg" />
                         <Thanks.TextBig>

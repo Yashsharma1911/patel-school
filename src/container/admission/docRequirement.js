@@ -47,9 +47,9 @@ export default function DocRequirementContainer() {
             <DocRequirement.HeadLine>Apply Now In Two Steps</DocRequirement.HeadLine>
             <DocRequirement.Text>To be considered for acceptance please be prepared to supply the following documents to our admission department for review.</DocRequirement.Text>
             <DocRequirement.Div>
-                {data.map((item) => {
+                {data.map((item, index) => {
                     return (
-                        <DocRequirement.DocContainer color={item.color} order={item.order}>
+                        <DocRequirement.DocContainer color={item.color} order={item.order} key={index}>
                             <DocRequirement.Img src={item.image} />
                             <DocRequirement.Text>{item.title}</DocRequirement.Text>
                         </DocRequirement.DocContainer>
@@ -57,8 +57,8 @@ export default function DocRequirementContainer() {
                 }
                 )}
                 <DocRequirement.ButtonDiv>
-                    <DocRequirement.BackButton to="/"> <DocRequirement.Img src="images/icons/left-icon-black.svg" />Back</DocRequirement.BackButton>
-                    <DocRequirement.ContinueButton to="/admissionform">Continue  <DocRequirement.Img src="images/icons/right-icon-white.svg" /></DocRequirement.ContinueButton>
+                    <DocRequirement.BackButton to="/" data-cy="back-button"> <DocRequirement.Img src="images/icons/left-icon-black.svg" />Back</DocRequirement.BackButton>
+                    <DocRequirement.ContinueButton to="/admissionform" data-cy="continue-button">Continue  <DocRequirement.Img src="images/icons/right-icon-white.svg" /></DocRequirement.ContinueButton>
                 </DocRequirement.ButtonDiv>
             </DocRequirement.Div>
         </DocRequirement>
