@@ -93,7 +93,12 @@ export const ImgSocialIcon = styled.img`
 export const ImgIcon = styled.img`
   margin-right: 15px;
 `;
-export const Logo = styled.img``;
+export const Logo = styled.img`
+  width: 90%;
+  height: auto;
+  transform: translateY(20px);
+  z-index: -1;
+`;
 export const Anchor = styled.a`
 font-style: normal;
 font-weight: normal;

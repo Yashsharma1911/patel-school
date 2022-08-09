@@ -7,7 +7,7 @@ export default function FooterContainer({ children, ...restProps }) {
             <Footer>
                 <Footer.Row>
                     <Footer.Column>
-                        <Footer.Logo to="/" src="images/icons/school-logo.svg" />
+                        <Footer.Logo to="/" src="images/school-logos/logo-color-white.svg" />
                         <Footer.Div>
                             <Footer.Anchor href="https://www.google.com/maps/place/Patel+Higher+Secondary+School+Karera/@25.44892,78.1170141,16.99z/data=!4m5!3m4!1s0x397745f08ea40515:0xc1ff0cb845010b98!8m2!3d25.4489177!4d78.1192156">Mahuar Colony, Shivpuri Road, Karera, India</Footer.Anchor>
                             <Footer.Div>
