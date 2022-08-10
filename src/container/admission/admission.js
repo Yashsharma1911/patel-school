@@ -7,7 +7,7 @@ import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import { v4 } from "uuid";
 import { addDoc, serverTimestamp, collection } from "firebase/firestore";
 
-const initialValues = {
+const INITIAL_VALUES = {
   name: "",
   father: "",
   mother: "",
@@ -64,7 +64,7 @@ const files = {
 
 export default function AdmissionContainer({ setIsThanks }) {
   const [toggleState, setToggleState] = useState(1);
-  const [values, setValues] = useState(initialValues);
+  const [values, setValues] = useState(INITIAL_VALUES);
   const [fileValues, setFileValues] = useState(files);
   const [checkClick, setCheckClick] = useState(false);
   // eslint-disable-next-line no-unused-vars
