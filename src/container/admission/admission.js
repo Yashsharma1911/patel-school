@@ -62,6 +62,47 @@ const files = {
   castCertificate: "",
 };
 
+const STATE = [
+  "Andhra Pradesh",
+  "Arunachal Pradesh",
+  "Assam",
+  "Bihar",
+  "Chhattisgarh",
+  "Goa",
+  "Gujarat",
+  "Haryana",
+  "Himachal Pradesh",
+  "Jammu and Kashmir",
+  "Jharkhand",
+  "Karnataka",
+  "Kerala",
+  "Madhya Pradesh",
+  "Maharashtra",
+  "Manipur",
+  "Meghalaya",
+  "Mizoram",
+  "Nagaland",
+  "Odisha",
+  "Punjab",
+  "Rajasthan",
+  "Sikkim",
+  "Tamil Nadu",
+  "Telangana",
+  "Tripura",
+  "Uttarakhand",
+  "Uttar Pradesh",
+  "West Bengal",
+  "Andaman and Nicobar Islands",
+  "Chandigarh",
+  "Dadra and Nagar Haveli",
+  "Daman and Diu",
+  "Delhi",
+  "Lakshadweep",
+  "Puducherry"
+];
+
+const CLASS = ["Nursery", "LKG", "UKG", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"];
+
 export default function AdmissionContainer({ setIsThanks }) {
   const [toggleState, setToggleState] = useState(1);
   const [values, setValues] = useState(INITIAL_VALUES);
@@ -448,21 +489,9 @@ export default function AdmissionContainer({ setIsThanks }) {
                       id="class"
                       data-cy="class"
                     >
-                      <AdmissionForm.Option value="Nursery">Nursery</AdmissionForm.Option>
-                      <AdmissionForm.Option value="LKG">LKG</AdmissionForm.Option>
-                      <AdmissionForm.Option value="UKG">UKG</AdmissionForm.Option>
-                      <AdmissionForm.Option value="1">1</AdmissionForm.Option>
-                      <AdmissionForm.Option value="2">2</AdmissionForm.Option>
-                      <AdmissionForm.Option value="3">3</AdmissionForm.Option>
-                      <AdmissionForm.Option value="4">4</AdmissionForm.Option>
-                      <AdmissionForm.Option value="5">5</AdmissionForm.Option>
-                      <AdmissionForm.Option value="6">6</AdmissionForm.Option>
-                      <AdmissionForm.Option value="7">7</AdmissionForm.Option>
-                      <AdmissionForm.Option value="8">8</AdmissionForm.Option>
-                      <AdmissionForm.Option value="9">9</AdmissionForm.Option>
-                      <AdmissionForm.Option value="10">10</AdmissionForm.Option>
-                      <AdmissionForm.Option value="11">11</AdmissionForm.Option>
-                      <AdmissionForm.Option value="12">12</AdmissionForm.Option>
+                      {CLASS.map((classes, index) => (
+                        <AdmissionForm.Option value={classes} key={index}>{classes}</AdmissionForm.Option>
+                      ))}
                     </AdmissionForm.Select>
                   </AdmissionForm.InputWrap>
                 </AdmissionForm.Div>
@@ -484,90 +513,11 @@ export default function AdmissionContainer({ setIsThanks }) {
                       <AdmissionForm.Option value="Select">
                         Select
                       </AdmissionForm.Option>
-                      <AdmissionForm.Option value="Andhra Pradesh">
-                        Andhra Pradesh
-                      </AdmissionForm.Option>
-                      <AdmissionForm.Option value="Arunachal Pradesh">
-                        Arunachal Pradesh
-                      </AdmissionForm.Option>
-                      <AdmissionForm.Option value="Assam">
-                        Assam
-                      </AdmissionForm.Option>
-                      <AdmissionForm.Option value="Bihar">
-                        Bihar
-                      </AdmissionForm.Option>
-                      <AdmissionForm.Option value="Chhattisgarh">
-                        Chhattisgarh
-                      </AdmissionForm.Option>
-                      <AdmissionForm.Option value="Goa">
-                        Goa
-                      </AdmissionForm.Option>
-                      <AdmissionForm.Option value="Gujarat">
-                        Gujarat
-                      </AdmissionForm.Option>
-                      <AdmissionForm.Option value="Haryana">
-                        Haryana
-                      </AdmissionForm.Option>
-                      <AdmissionForm.Option value="Himachal Pradesh">
-                        Himachal Pradesh
-                      </AdmissionForm.Option>
-                      <AdmissionForm.Option value="Jharkhand">
-                        Jharkhand
-                      </AdmissionForm.Option>
-                      <AdmissionForm.Option value="Karnataka">
-                        Karnataka
-                      </AdmissionForm.Option>
-                      <AdmissionForm.Option value="Kerala">
-                        Kerala
-                      </AdmissionForm.Option>
-                      <AdmissionForm.Option value="Madhya Pradesh">
-                        Madhya Pradesh
-                      </AdmissionForm.Option>
-                      <AdmissionForm.Option value="Maharashtra">
-                        Maharashtra
-                      </AdmissionForm.Option>
-                      <AdmissionForm.Option value="Manipur">
-                        Manipur
-                      </AdmissionForm.Option>
-                      <AdmissionForm.Option value="Meghalaya">
-                        Meghalaya
-                      </AdmissionForm.Option>
-                      <AdmissionForm.Option value="Mizoram">
-                        Mizoram
-                      </AdmissionForm.Option>
-                      <AdmissionForm.Option value="Nagaland">
-                        Nagaland
-                      </AdmissionForm.Option>
-                      <AdmissionForm.Option value="Odisha">
-                        Odisha
-                      </AdmissionForm.Option>
-                      <AdmissionForm.Option value="Punjab">
-                        Punjab
-                      </AdmissionForm.Option>
-                      <AdmissionForm.Option value="Rajasthan">
-                        Rajasthan
-                      </AdmissionForm.Option>
-                      <AdmissionForm.Option value="Sikkim">
-                        Sikkim
-                      </AdmissionForm.Option>
-                      <AdmissionForm.Option value="Tamil Nadu">
-                        Tamil Nadu
-                      </AdmissionForm.Option>
-                      <AdmissionForm.Option value="Telangana">
-                        Telangana
-                      </AdmissionForm.Option>
-                      <AdmissionForm.Option value="Tripura">
-                        Tripura
-                      </AdmissionForm.Option>
-                      <AdmissionForm.Option value="Uttar Pradesh">
-                        Uttar Pradesh
-                      </AdmissionForm.Option>
-                      <AdmissionForm.Option value="Uttarakhand">
-                        Uttarakhand
-                      </AdmissionForm.Option>
-                      <AdmissionForm.Option value="West Bengal">
-                        West Bengal
-                      </AdmissionForm.Option>
+                      {STATE.map((state, index) => (
+                        <AdmissionForm.Option key={index} value={state}>
+                          {state}
+                        </AdmissionForm.Option>
+                      ))}
                     </AdmissionForm.Select>
                   </AdmissionForm.InputWrap>
                   <AdmissionForm.InputWrap>
