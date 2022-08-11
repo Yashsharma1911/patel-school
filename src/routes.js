@@ -4,8 +4,13 @@ import { Home, Signup, Signin, GalleryImage, Courses, Result, Registration, Brow
 
 // ----------------------------------------------------------------------
 import * as ROUTES from './constants/routes';
+import UseAuthListener from './hooks/use-auth-listener';
+
+//helpers
+import { ProtectRoute } from './helpers/routeChecker';
 
 export default function Router() {
+    const { user } = UseAuthListener();
     return useRoutes([
         { path: ROUTES.HOME, element: <Home /> },
         { path: ROUTES.SIGN_UP, element: <Signup /> },
@@ -14,7 +19,14 @@ export default function Router() {
         { path: ROUTES.COURSES, element: <Courses /> },
         { path: ROUTES.RESULT, element: <Result /> },
         { path: ROUTES.REGISTRATION, element: <Registration /> },
-        { path: ROUTES.BROWSE, element: <Browse /> },
+        {
+            path: ROUTES.BROWSE,
+            element: <>
+                <ProtectRoute user={user}>
+                    <Browse />
+                </ProtectRoute>
+            </>
+        },
         { path: ROUTES.ADMISSION, element: <Admission /> },
         { path: ROUTES.STUDENT_LOGIN, element: <StudentLogin /> },
     ]);
