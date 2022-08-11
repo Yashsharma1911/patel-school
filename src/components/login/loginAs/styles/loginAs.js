@@ -1,5 +1,5 @@
 import styled, { keyframes } from 'styled-components'
-
+import { Link as ReactRouterLink } from 'react-router-dom'
 const fadeAnimation = keyframes`
     0% { opacity: 0; transform: translateY(120px);}
     100% { opacity: 1; transform: translateY(0px)}
@@ -65,6 +65,16 @@ export const Img = styled.img`
     }
 `
 export const Link = styled.a`
+    text-decoration: none;
+    opacity: 0;
+    animation-name: ${fadeAnimation};
+    animation-duration: 0.7s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease;
+    animation-delay: ${({ order }) => order * 0.2}s;
+`
+
+export const LinkTo = styled(ReactRouterLink)`
     text-decoration: none;
     opacity: 0;
     animation-name: ${fadeAnimation};
