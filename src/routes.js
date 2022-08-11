@@ -1,6 +1,6 @@
 import { useRoutes } from 'react-router-dom';
 // pages
-import { Home, Signup, Signin, GalleryImage, Courses, Result, Registration, Browse, Admission } from './pages';
+import { Home, Signup, Signin, GalleryImage, Courses, Result, Registration, Browse, Admission, StudentLogin } from './pages';
 
 // ----------------------------------------------------------------------
 import * as ROUTES from './constants/routes';
@@ -16,5 +16,6 @@ export default function Router() {
         { path: ROUTES.REGISTRATION, element: <Registration /> },
         { path: ROUTES.BROWSE, element: <Browse /> },
         { path: ROUTES.ADMISSION, element: <Admission /> },
+        { path: ROUTES.STUDENT_LOGIN, element: <StudentLogin /> },
     ]);
 }
