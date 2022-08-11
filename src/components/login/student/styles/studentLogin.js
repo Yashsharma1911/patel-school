@@ -8,7 +8,7 @@ const fadeAnimation = keyframes`
 
 const fadeAnimationButton = keyframes`
     0% { opacity: 0; transform: translateY(80px);}
-    100% { opacity: 0.8; transform: translateY(0px)}
+    100% { opacity: 1; transform: translateY(0px)}
 `
 
 const thunderAnimation = keyframes`
@@ -106,7 +106,7 @@ export const Button = styled.button`
     height: 45px;
     color: white;
     border: 0;
-    background: ${({ disabled }) => disabled ? "#3A3A3A" : "#000000"};
+    background: ${({ disabled }) => disabled ? "#5a5959" : "#000000"};
     border-radius: 14px 14px 0px 14px;
     font-size: 15px;
     transition: all 0.25s;
