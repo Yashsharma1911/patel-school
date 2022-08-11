@@ -36,4 +36,3 @@ DocRequirement.BackButton = function DocRequirementBackButton({ children, ...res
 DocRequirement.ContinueButton = function DocRequirementContinueButton({ children, ...restProps }) {
     return <ContinueButton {...restProps}>{children}</ContinueButton>
 }
-
