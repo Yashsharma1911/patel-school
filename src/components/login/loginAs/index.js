@@ -1,5 +1,5 @@
 import React from 'react'
-import { Container, SubContainer, ImgContainer, Text, Img, Link } from './styles/loginAs'
+import { Container, SubContainer, ImgContainer, Text, Img, Link, LinkTo } from './styles/loginAs'
 
 export default function LoginAs({ children, ...restProps }) {
     return (
@@ -34,5 +34,11 @@ LoginAs.Img = function loginAsImg({ ...restProps }) {
 LoginAs.Link = function loginAsLink({ children, ...restProps }) {
     return (
         <Link {...restProps} >{children}</Link>
+    )
+}
+
+LoginAs.LinkTo = function loginAsLinkTo({ children, ...restProps }) {
+    return (
+        <LinkTo {...restProps} >{children}</LinkTo>
     )
 }
