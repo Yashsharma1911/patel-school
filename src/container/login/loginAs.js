@@ -10,7 +10,7 @@ export default function LoginAsContainer() {
                     Login As
                 </LoginAs.Text>
                 <LoginAs.ImgContainer>
-                    <LoginAs.LinkTo to={ROUTES.SIGN_IN} order="2">
+                    <LoginAs.LinkTo to={ROUTES.STUDENT_LOGIN} order="2">
                         <LoginAs.Img src="images/login-student.svg" />
                     </LoginAs.LinkTo>
                     <LoginAs.Link href="https://dashboard.patelvidhyalaya.com/login" target="_blank" order="4" >
