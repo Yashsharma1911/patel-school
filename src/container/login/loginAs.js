@@ -1,5 +1,6 @@
 import React from 'react'
 import LoginAs from '../../components/login/loginAs'
+import * as ROUTES from '../../constants/routes'
 
 export default function LoginAsContainer() {
     return (
@@ -9,9 +10,9 @@ export default function LoginAsContainer() {
                     Login As
                 </LoginAs.Text>
                 <LoginAs.ImgContainer>
-                    <LoginAs.Link href="" order="2">
+                    <LoginAs.LinkTo to={ROUTES.SIGN_IN} order="2">
                         <LoginAs.Img src="images/login-student.svg" />
-                    </LoginAs.Link>
+                    </LoginAs.LinkTo>
                     <LoginAs.Link href="https://dashboard.patelvidhyalaya.com/login" target="_blank" order="4" >
                         <LoginAs.Img src="images/login-teacher.svg" />
                     </LoginAs.Link>
