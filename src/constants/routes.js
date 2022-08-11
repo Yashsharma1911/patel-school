@@ -7,3 +7,4 @@ export const REGISTRATION = '/registration';
 export const RESULT = '/result';
 export const COURSES = '/courses';
 export const ADMISSION = '/admissionform';
+export const STUDENT_LOGIN = '/student_login';
