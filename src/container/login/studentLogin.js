@@ -16,8 +16,8 @@ export default function StudentLoginContainer() {
         event.preventDefault();
         setCheckClick(true);
         signInWithEmailAndPassword(auth, emailAddress, password)
-            .then((user) => {
-                navigate(ROUTES.BROWSE);
+            .then(() => {
+                navigate(ROUTES.DASHBOARD);
             })
             .catch((error) => {
                 setError(error.message);

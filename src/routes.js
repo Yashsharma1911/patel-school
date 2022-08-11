@@ -1,6 +1,7 @@
 import { useRoutes } from 'react-router-dom';
 // pages
 import { Home, Signup, Signin, GalleryImage, Courses, Result, Registration, Browse, Admission, StudentLogin } from './pages';
+import DashboardLayout from './layout/index';
 
 // ----------------------------------------------------------------------
 import * as ROUTES from './constants/routes';
@@ -20,12 +21,15 @@ export default function Router() {
         { path: ROUTES.RESULT, element: <Result /> },
         { path: ROUTES.REGISTRATION, element: <Registration /> },
         {
-            path: ROUTES.BROWSE,
+            path: ROUTES.DASHBOARD,
             element: <>
                 <ProtectRoute user={user}>
-                    <Browse />
+                    <DashboardLayout />
                 </ProtectRoute>
-            </>
+            </>,
+            children: [
+                { path: 'profile', element: <Admission /> },
+            ]
         },
         { path: ROUTES.ADMISSION, element: <Admission /> },
         { path: ROUTES.STUDENT_LOGIN, element: <StudentLogin /> },
