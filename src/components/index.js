@@ -16,3 +16,4 @@ export { default as Maintenance } from './maintenance';
 export { default as LoginAs } from './login/loginAs';
 export { default as Gallery } from './gallery';
 export { default as Load } from './load';
+export { default as Login } from './login/student';
