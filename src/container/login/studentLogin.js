@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import Login from "../../components/login/student";
 import { useNavigate } from "react-router-dom";
-import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import { getAuth, signInWithEmailAndPassword, setPersistence, browserLocalPersistence } from "firebase/auth";
+
 import * as ROUTES from "../../constants/routes";
 
-export default function StudentLoginContainer() {
+export default function StudentLoginContainer({ setReset }) {
     const navigate = useNavigate();
     const [emailAddress, setEmailAddress] = useState("");
     const [password, setPassword] = useState("");
@@ -15,15 +16,21 @@ export default function StudentLoginContainer() {
     const handleSignIn = (event) => {
         event.preventDefault();
         setCheckClick(true);
-        signInWithEmailAndPassword(auth, emailAddress, password)
+        setPersistence(auth, browserLocalPersistence)
             .then(() => {
-                navigate(ROUTES.DASHBOARD);
+                signInWithEmailAndPassword(auth, emailAddress, password)
+                    .then(() => {
+                        navigate(ROUTES.DASHBOARD);
+                    })
+                    .catch((error) => {
+                        setError(error.message);
+                        setEmailAddress('');
+                        setPassword('');
+                        setCheckClick(false);
+                    });
             })
             .catch((error) => {
-                setError(error.message);
-                setEmailAddress('');
-                setPassword('');
-                setCheckClick(false);
+                console.log('error setting persistence', error);
             });
     };
 
@@ -35,9 +42,9 @@ export default function StudentLoginContainer() {
                 <Login.Headline>Welcome Back</Login.Headline>
                 <Login.Img order="8" src="images/icons/thunder-icon.svg" />
                 {error &&
-                    <Login.Error>
-                        <Login.ErrorText>{error}</Login.ErrorText>
-                    </Login.Error>
+                    <Login.MessageContainer>
+                        <Login.MessageText>{error}</Login.MessageText>
+                    </Login.MessageContainer>
                 }
                 <Login.Div>
                     <Login.Label htmlFor="email" order="2">Email Address</Login.Label>
@@ -51,7 +58,7 @@ export default function StudentLoginContainer() {
                     />
                 </Login.Div>
                 <Login.Div>
-                    <Login.Label htmlFor="password" order="4">Password<Login.Forget order="4"> • Forget?</Login.Forget></Login.Label>
+                    <Login.Label order="4">Password<Login.Forget onClick={() => setReset(true)} order="4"> • Forget?</Login.Forget></Login.Label>
                     <Login.Input
                         id="password"
                         type="password"
