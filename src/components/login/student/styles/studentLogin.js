@@ -144,7 +144,7 @@ export const Forget = styled.a`
         text-decoration: underline;
     }
 `
-export const Error = styled.div`
+export const MessageContainer = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -153,10 +153,10 @@ export const Error = styled.div`
     max-width: 403px;
     width: 85%;
     height: 66px;
-    background: #D43260;
+    background: ${({ colorCode }) => colorCode};
     border-radius: 14px 14px 0px 14px;
 `;
-export const ErrorText = styled.div`
+export const MessageText = styled.div`
     text-align: center;
     font-family: 'Lato';
     font-style: normal;

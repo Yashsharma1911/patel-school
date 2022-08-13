@@ -1,5 +1,5 @@
 import React from 'react'
-import { Container, SubContainer, Label, Input, Button, Error, ErrorText, Link, Headline, Div, Forget, Img } from './styles/studentLogin'
+import { Container, SubContainer, Label, Input, Button, MessageText, MessageContainer, Link, Headline, Div, Forget, Img } from './styles/studentLogin'
 
 export default function Login({ children, ...restProps }) {
     return (
@@ -23,12 +23,12 @@ Login.Button = function LoginButton({ children, ...restProps }) {
     return <Button {...restProps}>{children}</Button>
 }
 
-Login.Error = function LoginError({ children, ...restProps }) {
-    return <Error {...restProps}>{children}</Error>
+Login.MessageContainer = function LoginMessageContainer({ children, ...restProps }) {
+    return <MessageContainer {...restProps}>{children}</MessageContainer>
 }
 
-Login.ErrorText = function LoginErrorText({ children, ...restProps }) {
-    return <ErrorText {...restProps}>{children}</ErrorText>
+Login.MessageText = function LoginMessageText({ children, ...restProps }) {
+    return <MessageText {...restProps}>{children}</MessageText>
 }
 
 Login.Link = function LoginLink({ children, ...restProps }) {
