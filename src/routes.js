@@ -1,6 +1,6 @@
 import { useRoutes } from 'react-router-dom';
 // pages
-import { Home, Signup, Signin, GalleryImage, Courses, Result, Registration, Browse, Admission, StudentLogin } from './pages';
+import { Home, Signup, Signin, GalleryImage, Courses, Result, Registration, Admission, StudentLogin } from './pages';
 import DashboardLayout from './layout/index';
 
 // ----------------------------------------------------------------------
