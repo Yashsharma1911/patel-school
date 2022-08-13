@@ -32,7 +32,6 @@ export default function ResetPasswordContainer() {
             });
     };
 
-
     return (
 
         <Login>
