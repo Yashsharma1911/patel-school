@@ -30,12 +30,13 @@ export default function GalleryImage() {
     const [images, setImages] = useState([]);
     const [stateCheck, setStateCheck] = useState(false);
     useEffect(() => {
+        let isMounted = true;
         const imageRef = ref(storage, `galleryImages`);
-        const getLink = () => {
+        const getLink = async () => {
             listAll(imageRef).then((response) => {
                 response.items.forEach((item) => {
                     getDownloadURL(item).then((url) => {
-                        setImages(prev => [...prev, {
+                        if (isMounted) setImages(prev => [...prev, {
                             original: url,
                             thumbnail: url,
                             loading: "lazy"
@@ -43,10 +44,15 @@ export default function GalleryImage() {
                     });
 
                 });
-                setStateCheck(true);
+                if (isMounted) setStateCheck(true);
             });
         }
         getLink();
+
+        // doing some clean up
+        return () => {
+            isMounted = false;
+        }
     }, []);
 
     return (
