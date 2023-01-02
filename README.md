@@ -12,13 +12,14 @@ where students can get all the information related to the school knowing from co
 ## Features
 
 - Couses Information
-- Secure Login functionality 
+- Secure Login functionality
 - Student Registration
 - Student details saved at firebase
 - Student Result (comming soon)
 - Admin and Student Dashboard
 - Edit, Delete and Add funtionality of students
 - Fully responsive with clean UI desing
+- Payment Gateway (comming soon)
 
 ## Run Locally
 
@@ -52,7 +53,8 @@ Start the development server
 
 ## Environment Variables
 
-To run this project, you will need to add the following .env files in ```~/root directory```
+To run this project, you will need to add the following .env files in `~/root directory`
+
 - .env.envName
 - .env.production
 - .env.staging
@@ -84,6 +86,7 @@ To do Integration testing or End-to-End testing of this website, you will need t
 ```
 
 ### Start testing
+
 Run following command to start tests
 
 ```bash
@@ -91,10 +94,12 @@ npx run cypress
 ```
 
 ## Terms & Conditions
+
 1. Of course, all of the code is there and nothing is hidden from you so if you would like to make any other styling changes, feel free!
 2. You can not sell this project.
 
 ## Contribution
+
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
 ## Contact Organisation
@@ -104,6 +109,7 @@ Email: mukeshsharma@patelvidhyalaya.com
 Website: [www.patelvidhyalaya.com](https://www.patelvidhyalaya.com/)
 
 ## Contact me
+
 Website: [https://yashsharma.netlify.app/](https://yashsharma.netlify.app/)
 
 Email: yashsharma2572@gmail.com
