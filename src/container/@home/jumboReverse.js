@@ -39,7 +39,7 @@ export default function JumboReverseContainer({ children, ...restProps }) {
                             </Jumbotron.TextWrap>
                         </Jumbotron.FeatureDiv>
                     </Jumbotron.Div>
-                    <Jumbotron.Button to="/">Descover More</Jumbotron.Button>
+                    <Jumbotron.Button to="/">Discover More</Jumbotron.Button>
                 </Jumbotron.Right>
             </Jumbotron>
         </>
