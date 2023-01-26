@@ -42,7 +42,7 @@ export default function StudentLoginContainer({ setReset }) {
                 <Login.Headline>Welcome Back</Login.Headline>
                 <Login.Img order="8" src="images/icons/thunder-icon.svg" />
                 {error &&
-                    <Login.MessageContainer>
+                    <Login.MessageContainer colorCode="#D43260">
                         <Login.MessageText>{error}</Login.MessageText>
                     </Login.MessageContainer>
                 }

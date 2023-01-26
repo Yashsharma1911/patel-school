@@ -1,6 +1,9 @@
 import React from 'react';
 import Footer from '../components/footer';
 
+// ROUTES
+import * as ROUTES from '../constants/routes';
+
 export default function FooterContainer({ children, ...restProps }) {
     return (
         <>
@@ -24,10 +27,10 @@ export default function FooterContainer({ children, ...restProps }) {
                     <Footer.Column>
                         <Footer.PageLink to="#">Other Pages</Footer.PageLink>
                         <Footer.PageLink to="#">About Us</Footer.PageLink>
-                        <Footer.PageLink to="#">Contact Us</Footer.PageLink>
-                        <Footer.PageLink to="#">Registration</Footer.PageLink>
+                        <Footer.PageLink to={ROUTES.CONTACT}>Contact Us</Footer.PageLink>
+                        <Footer.PageLink to={ROUTES.REGISTRATION}>Registration</Footer.PageLink>
                         <Footer.PageLink to="#">Result</Footer.PageLink>
-                        <Footer.PageLink to="#">Courses</Footer.PageLink>
+                        <Footer.PageLink to={ROUTES.COURSES}>Courses</Footer.PageLink>
                     </Footer.Column>
                     <Footer.Column>
                         <Footer.PageLink to="#">Privacy & Policy</Footer.PageLink>

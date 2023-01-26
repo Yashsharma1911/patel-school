@@ -1,10 +1,10 @@
-import React from 'react'
-import DashboardSidebar from './dashboardSidebar'
-import DashboardNavbar from './dashboardNavbar'
-import styled from 'styled-components'
+import React from 'react';
+import DashboardSidebar from './dashboardSidebar';
+import DashboardNavbar from './dashboardNavbar';
+import styled from 'styled-components';
 
 // React Router
-import { Outlet } from 'react-router-dom'
+import { Outlet } from 'react-router-dom';
 
 
 const RootStyle = styled('div')({
@@ -22,7 +22,7 @@ export default function DashboardLayout() {
         <>
             <DashboardNavbar />
             <RootStyle>
-                <DashboardSidebar />
+                {/* <DashboardSidebar /> */}
                 <MainStyle>
                     <Outlet />
                 </MainStyle>

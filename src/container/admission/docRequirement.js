@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import DocRequirement from '../../components/docRequirement';
 
 const data = [
@@ -42,6 +42,12 @@ const data = [
 ]
 
 export default function DocRequirementContainer() {
+
+    useEffect(() => {
+        // 👇️ scroll to top on page load
+        window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+    }, []);
+
     return (
         <DocRequirement>
             <DocRequirement.HeadLine>Apply Now In Two Steps</DocRequirement.HeadLine>

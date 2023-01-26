@@ -1,6 +1,7 @@
 import { useRoutes } from 'react-router-dom';
 // pages
-import { Home, Signup, Signin, GalleryImage, Courses, Result, Registration, Admission, StudentLogin } from './pages';
+import { Home, Signup, Signin, GalleryImage, Courses, Result, Registration, Admission, StudentLogin, Contact } from './pages';
+import AdmissionDashboard from './sections/dashborad/admissionDashboard';
 import DashboardLayout from './layout/index';
 
 // ----------------------------------------------------------------------
@@ -28,10 +29,11 @@ export default function Router() {
                 </ProtectRoute>
             </>,
             children: [
-                { path: 'profile', element: <Admission /> },
+                { path: ROUTES.DASBOARD_ADMISSION, element: <AdmissionDashboard/> },
             ]
         },
         { path: ROUTES.ADMISSION, element: <Admission /> },
         { path: ROUTES.STUDENT_LOGIN, element: <StudentLogin /> },
+        { path: ROUTES.CONTACT, element: <Contact /> },
     ]);
 }
