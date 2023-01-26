@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Navigation } from 'baseui/side-navigation';
 const nav = [
     {
-        title: 'Colors',
+        title: 'Admission',
         itemId: '#level1.1',
         subNav: [
             {

@@ -4,7 +4,7 @@ import Prepares from '../../components/prepares'
 const data = [
     {
         src: "images/icons/leader-icon-blue.svg",
-        title: "tomorrow's Leader",
+        title: "Tomorrow's Leader",
     },
     {
         src: "images/icons/earth-icon-orange.svg",
