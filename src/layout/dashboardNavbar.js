@@ -77,7 +77,7 @@ export default function DashboardNavbar() {
                  navigate(item.id);
                 }
             }}
-            username={user.providerData[0].displayName ? user.providerData[0].displayName : "User"}
+            username={user ? (user.providerData[0].displayName ? user.providerData[0].displayName : "User"): "User"}
             usernameSubtitle="Class 11"
             userItems={[
                 { icon: Overflow, label: "User A" },

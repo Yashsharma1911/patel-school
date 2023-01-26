@@ -1,7 +1,7 @@
 import { useRoutes } from 'react-router-dom';
 // pages
 import { Home, Signup, Signin, GalleryImage, Courses, Result, Registration, Admission, StudentLogin, Contact } from './pages';
-import AdmissionContainer from './container/admission/admission';
+import AdmissionDashboard from './sections/dashborad/admissionDashboard';
 import DashboardLayout from './layout/index';
 
 // ----------------------------------------------------------------------
@@ -29,7 +29,7 @@ export default function Router() {
                 </ProtectRoute>
             </>,
             children: [
-                { path: ROUTES.DASBOARD_ADMISSION, element: <AdmissionContainer/> },
+                { path: ROUTES.DASBOARD_ADMISSION, element: <AdmissionDashboard/> },
             ]
         },
         { path: ROUTES.ADMISSION, element: <Admission /> },
