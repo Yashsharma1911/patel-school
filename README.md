@@ -5,21 +5,21 @@
 A react based school website as an open source. Multilple functionality are embedded in the web application
 where students can get all the information related to the school knowing from courses to registration and results.
 
-![Patel School](https://user-images.githubusercontent.com/90546692/184538504-68b7a3da-9d73-442c-a00a-69a757129e2a.png)
+✅ Live: [www.patelvidhyalaya.com](https://www.patelvidhyalaya.com/)
 
+![Patel School](https://user-images.githubusercontent.com/90546692/184538504-68b7a3da-9d73-442c-a00a-69a757129e2a.png)
 
 ## Features
 
 - Couses Information
 - Secure Login functionality
-- Student Registration 
+- Student Registration
 - Student details saved at firebase
-- Student Result
+- Student Result (comming soon)
 - Admin and Student Dashboard
 - Edit, Delete and Add funtionality of students
-
-
-
+- Fully responsive with clean UI desing
+- Payment Gateway (comming soon)
 
 ## Run Locally
 
@@ -41,58 +41,35 @@ Install dependencies
   npm install
 ```
 
-Start the server
+Start the development server
 
 ```bash
-  npm run start
+  npm start
 ```
-
 
 ## Folder Structure
 
 ![folder structure](https://user-images.githubusercontent.com/90546692/184569971-eef5c622-ea58-4c63-91d3-bb516b6cc444.jpeg)
 
-
 ## Environment Variables
 
-To run this project, you will need to add the following environment variables to your .env file
+To run this project, you will need to add the following .env files in `~/root directory`
 
-`API_KEY`
-#### Dependencies
-- /node_modules
-- /.pnp
-- .pnp.js
-
-#### Testing
-- /coverage
-
-#### Production
-- /build
-
-#### Misc
-- .DS_Store
-- .env.local
-- .env.development.local
-- .env.test.local
-- .env.production.local
 - .env.envName
 - .env.production
 - .env.staging
 
-- npm-debug.log*
-- yarn-debug.log*
-- yarn-error.log*
-
-
-
-## Deployment
-
-To deploy this project run
+Now you need to put following firebase configuration in these .env files. You can find your firebase configuration bottom of project setting in firebase.
 
 ```bash
-  npm run build
+REACT_APP_API_KEY = "Your app API key"
+REACT_APP_AUTHDOMAIN =  "Your app auth domain"
+REACT_APP_PROJECT_ID =  "Your app project ID"
+REACT_APP_MESSAGING_SENDER_ID = "you app messaging-sender ID"
+REACT_APP_APP_ID = "Your app ID"
+REACT_APP_MESUREMENT_ID = "Your app mesurement ID"
+REACT_APP_STORAGEBUCKET = "Your app storagebucket"
 ```
-
 
 ## Used By
 
@@ -100,12 +77,43 @@ This project is used by the following organisation:
 
 - Patel Higher Secondary School
 
-
 ## Running Tests
 
-To run tests, run the following command
+To do Integration testing or End-to-End testing of this website, you will need to have Cypress >=7.2.0 in your project. If you don't already have it, you can get it [HERE](https://www.cypress.io/) or you can run following command to install cypress as a project dependency
 
 ```bash
-  npx run cypress
+  npx install cypress
 ```
 
+### Start testing
+
+Run following command to start tests
+
+```bash
+npx run cypress
+```
+
+## Terms & Conditions
+
+1. Of course, all of the code is there and nothing is hidden from you so if you would like to make any other styling changes, feel free!
+2. You can not sell this project.
+
+## Contribution
+
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+
+## Contact Organisation
+
+Email: mukeshsharma@patelvidhyalaya.com
+
+Website: [www.patelvidhyalaya.com](https://www.patelvidhyalaya.com/)
+
+## Contact me
+
+Website: [https://yashsharma.netlify.app/](https://yashsharma.netlify.app/)
+
+Email: yashsharma2572@gmail.com
+
+Instagram: [yashsharma_f](https://www.instagram.com/yashsharma_f/)
+
+Linkedin: [Yash sharma](https://www.linkedin.com/in/yash-sharma-4276b61b5/)
