@@ -1,13 +1,10 @@
-import React, {useEffect, useState} from 'react'
+import React, {useState} from 'react'
 import AdmissionContainer from '../../container/admission/admission'
 import Thanks from '../../components/thanks'
-import { collection, getDocs } from "firebase/firestore";
 // import user custom hook
 import UseFirestoreData from '../../hooks/use-user-listener';
 
-import { db } from '../../lib/firebase.prod';
 import LoaderContainer from '../../container/loader'
-import { Routes } from 'react-router-dom';
 import * as ROUTES from '../../constants/routes';
 
 export default function AdmissionDashboard() {
