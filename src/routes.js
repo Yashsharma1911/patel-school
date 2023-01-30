@@ -6,13 +6,22 @@ import DashboardLayout from './layout/index';
 
 // ----------------------------------------------------------------------
 import * as ROUTES from './constants/routes';
+
+// custom hooks
 import UseAuthListener from './hooks/use-auth-listener';
+import UseFirestoreData from './hooks/use-user-listener';
 
 //helpers
 import { ProtectRoute } from './helpers/routeChecker';
 
+//context
+import { FirebaseUserContext } from "./context/firebase";
+
+
 export default function Router() {
     const { user } = UseAuthListener();
+    const { data, showLoader } = UseFirestoreData("students");
+    
     return useRoutes([
         { path: ROUTES.HOME, element: <Home /> },
         { path: ROUTES.SIGN_UP, element: <Signup /> },
@@ -24,8 +33,10 @@ export default function Router() {
         {
             path: ROUTES.DASHBOARD,
             element: <>
-                <ProtectRoute user={user}>
-                    <DashboardLayout />
+                <ProtectRoute user={ user }>
+                    <FirebaseUserContext.Provider value={{ user, data, showLoader }}>
+                        <DashboardLayout />
+                    </FirebaseUserContext.Provider>
                 </ProtectRoute>
             </>,
             children: [

@@ -2,14 +2,16 @@ import React, {useState} from 'react'
 import AdmissionContainer from '../../container/admission/admission'
 import Thanks from '../../components/thanks'
 // import user custom hook
-import UseFirestoreData from '../../hooks/use-user-listener';
+// import UseFirestoreData from '../../hooks/use-user-listener';
+import { FirebaseUserContext } from "../../context/firebase";
 
 import LoaderContainer from '../../container/loader'
 import * as ROUTES from '../../constants/routes';
 
 export default function AdmissionDashboard() {
     const [isThanks, setIsThanks] = useState(false);
-    const { data, showLoader } = UseFirestoreData("students");
+    const { data, showLoader  } = React.useContext(FirebaseUserContext);
+    // const { data, showLoader } = UseFirestoreData("students");
 
     if(showLoader){ 
         return <LoaderContainer />
