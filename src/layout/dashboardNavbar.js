@@ -1,6 +1,7 @@
-import * as React from "react";
+import React, { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { getAuth, signOut } from "firebase/auth";
+import { FirebaseUserContext } from "../context/firebase";
 
 import {
     AppNavBar,
@@ -13,10 +14,9 @@ import {
     Upload
 } from "baseui/icon";
 
-import UseAuthListener from '../hooks/use-auth-listener';
-
 export default function DashboardNavbar() {
-    const { user } = UseAuthListener();
+    // const { user } = UseAuthListener();
+    const { user } = useContext(FirebaseUserContext);
     let navigate = useNavigate(); 
 
     // firebase function for logout user
@@ -77,7 +77,7 @@ export default function DashboardNavbar() {
                  navigate(item.id);
                 }
             }}
-            username={user ? (user.providerData[0].displayName ? user.providerData[0].displayName : "User"): "User"}
+            username={user.providerData[0].displayName ? user.providerData[0].displayName : "User"}
             usernameSubtitle="Class 11"
             userItems={[
                 { icon: Overflow, label: "User A" },
