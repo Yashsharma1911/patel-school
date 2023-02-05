@@ -54,16 +54,14 @@ export default function DashboardNavbar() {
             label: "Hostel" 
         },
         {
-            id: "main-d",
+            id: "feesDashboard/school",
             active: true,
             icon: ChevronDown,
-            label: "Main D",
+            label: "Fees",
             navExitIcon: Delete,
             children: [
-                { icon: Upload, label: "Secondary A" },
-                { icon: Upload, label: "Secondary A" },
-                { icon: Upload, label: "Secondary A" },
-                { icon: Upload, label: "Secondary B" }
+                { id: "feesDashboard/school", icon: Upload, label: "School Fees" },
+                { id: "feesDashboard/hostel",icon: Upload, label: "Hostel Fees" },
             ]
         }
     ]);

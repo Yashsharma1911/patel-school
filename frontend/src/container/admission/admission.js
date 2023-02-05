@@ -192,6 +192,7 @@ export default function AdmissionContainer({ setIsThanks }) {
     try {
       await setDoc(doc(db, "students", user.uid), {
         ...PersonalDetails,
+        isDataSubmitted: true,
         timestamp: serverTimestamp(),
       });
       setIsThanks(true);

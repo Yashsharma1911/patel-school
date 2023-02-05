@@ -1,0 +1,55 @@
+
+{
+    "adharCardNumber": "4324-3243-2432",
+    "admissionType": "Regular",
+    "category": "",
+    "childId": "432432432",
+    "class": "11",
+    "address": {
+        "permanentAddress": "patel school",
+        "pinCode": "473660",
+        "postOffice": "carer",
+        "state": "Madhya Pradesh",
+        "town": "karera",
+        "district": "Shivpuri"
+    },
+    "subjects": {
+        "languageOne": "English",
+        "languageThree": "Sanskrit",
+        "languageTwo": "Hindi",
+        "diversifiedSubjectOne": "Mathematics",
+        "diversifiedSubjectThree": "Chemistry",
+        "diversifiedSubjectTwo": "Physics",
+        "group": "Mathematics",
+        "additionalSubject": "Biology"
+    },
+    "dob": "2002-11-24",
+    "documentURL": {
+        "academicGradeReport": "https://firebasestorage.googleapis.com/v0/b/patel-school-karera.appspot.com/o/pdfFiles%2FYash%20Sharma%20%7C%20mukesh%20sharma%2FacademicGradeReport%2F000000000.pdf4ec80762-412b-4e11-b19e-76e20ba1725a?alt=media&token=47aaed87-35b3-4059-baab-a98edae5124a",
+        "adharCard": "https://firebasestorage.googleapis.com/v0/b/patel-school-karera.appspot.com/o/pdfFiles%2FYash%20Sharma%20%7C%20mukesh%20sharma%2FadharCard%2F_.__%20Rajiv%20Gandhi%20Proudyogiki%20Vishwavidyalaya%2C%20Bhopal%20__._.pdf490d5be7-23ea-477b-a9b7-c223aec1501f?alt=media&token=4748b9fa-e1b1-4936-86b6-49a17cab39ee",
+        "bankAccount": "https://firebasestorage.googleapis.com/v0/b/patel-school-karera.appspot.com/o/pdfFiles%2FYash%20Sharma%20%7C%20mukesh%20sharma%2FbankAccount%2F6.PDFf249edc1-3b97-48e3-8cd6-4f320711dfae?alt=media&token=0178d89a-9ebf-4342-95f5-6fea11a0494e",
+        "castCertificate": "https://firebasestorage.googleapis.com/v0/b/patel-school-karera.appspot.com/o/pdfFiles%2FYash%20Sharma%20%7C%20mukesh%20sharma%2FcastCertificate%2F1752567_870152_LoanApplicationForm.pdfe7e1ac36-2727-4518-904b-767cca060ed3?alt=media&token=1529ce13-7aa2-45f3-bdc3-0a4c1f7cfe38",
+        "incomeCertificate": "https://firebasestorage.googleapis.com/v0/b/patel-school-karera.appspot.com/o/pdfFiles%2FYash%20Sharma%20%7C%20mukesh%20sharma%2FincomeCertificate%2F0905cs201203%20(CS%20302)%20midsem.pdfa8dda39c-2578-4f86-8e8a-461f07a1306e?alt=media&token=4d429a80-289d-4f65-826c-26100db8bc90",
+        "optionalGradeMarkSheet": "https://firebasestorage.googleapis.com/v0/b/patel-school-karera.appspot.com/o/pdfFiles%2FYash%20Sharma%20%7C%20mukesh%20sharma%2FoptionalGradeMarkSheet%2Fc%20programs.pdf28e4c9df-7cfc-4fc8-8c1d-44acda44399c?alt=media&token=b0b022a1-7dca-476d-a4ae-bd28293c664f",
+        "samagraId": "https://firebasestorage.googleapis.com/v0/b/patel-school-karera.appspot.com/o/pdfFiles%2FYash%20Sharma%20%7C%20mukesh%20sharma%2FsamagraId%2F09_science_notes_ch01_matter_in_our_surroundings.pdf1c0d159b-16cf-4f81-b23b-2566fc3c28e8?alt=media&token=cd4ecec2-b0b8-44d2-9b34-0f64050fffef",
+        "transferCertificate": "https://firebasestorage.googleapis.com/v0/b/patel-school-karera.appspot.com/o/pdfFiles%2FYash%20Sharma%20%7C%20mukesh%20sharma%2FtransferCertificate%2F1-converted.pdf90de4a74-758c-471a-81a1-3771b5a09d50?alt=media&token=18d1b012-6d9a-4168-b86c-e1d5029128d0"
+    },
+    "father": "mukesh sharma",
+    "fatherAnnualIncome": "150000",
+    "fees": [
+        ""
+    ],
+    "medium": "English",
+    "mobileNumber": "9691808377",
+    "mother": "shashi prabha sharma",
+    "name": "yash sharma",
+    "nominationNumber": "A19/162034/034",
+    "parentMobileNumber": "9425489825",
+    "permanentAddress": "patel school",
+    "pinCode": "473660",
+    "postOffice": "carer",
+    "referal": "",
+    "state": "Madhya Pradesh",
+    "timestamp": "2022-11-15T20:03:09.278Z",
+    "town": "karera"
+}

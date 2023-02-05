@@ -2,6 +2,9 @@ import { useRoutes } from 'react-router-dom';
 // pages
 import { Home, Signup, Signin, GalleryImage, Courses, Result, Registration, Admission, StudentLogin, Contact } from './pages';
 import AdmissionDashboard from './sections/dashborad/admissionDashboard';
+import FeesDashboard from './sections/dashborad/fees/feesDashboard';
+import HostelFeesDashboard from './sections/dashborad/fees/hostelFeesDashboard';
+import SchoolFeesDashboard from './sections/dashborad/fees/schoolFeesDashboard';
 import DashboardLayout from './layout/index';
 
 // ----------------------------------------------------------------------
@@ -41,6 +44,10 @@ export default function Router() {
             </>,
             children: [
                 { path: ROUTES.DASBOARD_ADMISSION, element: <AdmissionDashboard/> },
+                { path: ROUTES.DASBOARD_FEES, element: <FeesDashboard/>, children: [
+                    { path: ROUTES.DASBOARD_FEES_SCHOOL, element: <SchoolFeesDashboard/> },
+                    { path: ROUTES.DASBOARD_FEES_HOSTEL, element: <HostelFeesDashboard/> },
+                ] },
             ]
         },
         { path: ROUTES.ADMISSION, element: <Admission /> },

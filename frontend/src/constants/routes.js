@@ -12,3 +12,8 @@ export const DASHBOARD = '/dashboard';
 
 // dashboard routes
 export const DASBOARD_ADMISSION = 'admissionformdashboard';
+export const DASBOARD_FEES = 'feesDashboard';
+
+// FEES DASHBOARD
+export const DASBOARD_FEES_SCHOOL = 'school';
+export const DASBOARD_FEES_HOSTEL = 'hostel';
