@@ -112,71 +112,46 @@ export default function AdmissionContainer({ setIsThanks }) {
   // eslint-disable-next-line no-unused-vars
   const [isValid, setIsValid] = useState(false);
   const { user } = useContext(FirebaseUserContext);
-  console.log(user)
+  console.log(values)
 
   // use regex on input fields to validate
   const validate = (value, type) => {
-    switch (type) {
-      case "name":
-        return /^[a-zA-Z ]+$/.test(value);
-      case "father":
-        return /^[a-zA-Z ]+$/.test(value);
-      case "mother":
-        return /^[a-zA-Z ]+$/.test(value);
-      case "dob":
-        return /^[0-9]{4}-[0-9]{2}-[0-9]{2}$/.test(value);
-      case "childId":
-        return /^[0-9]{9}$/.test(value);
-      case "class":
-        return /^([a-zA-Z]{0,7})?([0-9]{1,2})?$/.test(value);
-      case "state":
-        return /^[a-zA-Z ]+$/.test(value);
-      case "mobileNumber":
-        return /^[0-9]{10}$/.test(value);
-      case "district":
-        return /^[a-zA-Z ]+$/.test(value);
-      case "parentMobileNumber":
-        return /^[0-9]{10}$/.test(value);
-      case "town":
-        return /^[a-zA-Z ]+$/.test(value);
-      case "medium":
-        return /^[a-zA-Z ]+$/.test(value);
-      case "nominationNumber":
-        return /^[A-Z]([0-9]){2}\/[0-9]{6}\/[0-9]{3}$/.test(value);
-      case "postOffice":
-        return /^[a-zA-Z ]+$/.test(value);
-      case "fatherAnnualIncome":
-        return /^[0-9]{3,14}$/.test(value);
-      case "admissionType":
-        return /^[a-zA-Z ]+$/.test(value);
-      case "permanentAddress":
-        return /^[a-zA-Z0-9 ]+$/.test(value);
-      case "pinCode":
-        return /^[0-9]{6}$/.test(value);
-      case "group":
-        return /^[a-zA-Z ]+$/.test(value);
-      case "languageOne":
-        return /^[a-zA-Z ]+$/.test(value);
-      case "languageTwo":
-        return /^[a-zA-Z ]+$/.test(value);
-      case "diversifiedSubjectOne":
-        return /^[a-zA-Z ]+$/.test(value);
-      case "diversifiedSubjectTwo":
-        return /^[a-zA-Z ]+$/.test(value);
-      case "diversifiedSubjectThree":
-        return /^[a-zA-Z ]+$/.test(value);
-      case "additionalSubject":
-        return /^[a-zA-Z ]+$/.test(value);
-      case "category":
-        return /^[a-zA-Z ]+$/.test(value);
-      case "referal":
-        return /^[a-zA-Z ]+$/.test(value);
-      case "adharCardNumber":
-        // eslint-disable-next-line no-useless-escape
-        return /^[0-9]{4}\-[0-9]{4}\-[0-9]{4}$/.test(value);
-      default:
-        return;
+    const regex = {
+      name: /^[a-zA-Z ]+$/,
+      father: /^[a-zA-Z ]+$/,
+      mother: /^[a-zA-Z ]+$/,
+      dob: /^[0-9]{4}-[0-9]{2}-[0-9]{2}$/,
+      childId: /^[0-9]{9}$/,
+      class: /^([a-zA-Z]{0,7})?([0-9]{1,2})?$/,
+      state: /^[a-zA-Z ]+$/,
+      mobileNumber: /^[0-9]{10}$/,
+      district: /^[a-zA-Z ]+$/,
+      parentMobileNumber: /^[0-9]{10}$/,
+      town: /^[a-zA-Z ]+$/,
+      medium: /^[a-zA-Z ]+$/,
+      nominationNumber: /^[A-Z]([0-9]){2}\/[0-9]{6}\/[0-9]{3}$/,
+      postOffice: /^[a-zA-Z ]+$/,
+      fatherAnnualIncome: /^[0-9]{3,14}$/,
+      admissionType: /^[a-zA-Z ]+$/,
+      permanentAddress: /^[a-zA-Z0-9 ]+$/,
+      pinCode: /^[0-9]{6}$/,
+      group: /^[a-zA-Z ]+$/,
+      languageOne: /^[a-zA-Z ]+$/,
+      languageTwo: /^[a-zA-Z ]+$/,
+      diversifiedSubjectOne: /^[a-zA-Z ]+$/,
+      diversifiedSubjectTwo: /^[a-zA-Z ]+$/,
+      diversifiedSubjectThree: /^[a-zA-Z ]+$/,
+      additionalSubject: /^[a-zA-Z ]+$/,
+      category: /^[a-zA-Z ]+$/,
+      referal: /^[a-zA-Z ]+$/,
+      adharCardNumber: /^[0-9]{4}-[0-9]{4}-[0-9]{4}$/
+    };
+    
+    if (!regex[type]) {
+      throw new Error(`Unexpected type: ${type}`);
     }
+    
+    return regex[type].test(value);
   };
 
   const checkInputValidation = (e) => {
@@ -194,36 +169,36 @@ export default function AdmissionContainer({ setIsThanks }) {
   // managing input
   const handleInputChange = (e) => {
     const { name, value } = e.target;
+    setValues({ ...values, [name]: value });
 
-    // add hyphen after every four digit in adharCardNumber
     if (name === "adharCardNumber") {
-      const adharCardNumber = value.replace(/\D/g, "");
-      const adharCardNumberArray = adharCardNumber.match(/.{1,4}/g);
-      let adharCardNumberHyphen = "";
-      if (adharCardNumberArray !== null) {
-        adharCardNumberHyphen = adharCardNumberArray.join("-");
-      }
-      setValues({ ...values, [name]: adharCardNumberHyphen !== "" ? adharCardNumberHyphen : "" });
-      checkInputValidation(e);
+      const formattedAdharCardNumber = formatAdharCardNumber(value);
+      setValues({ ...values, adharCardNumber: formattedAdharCardNumber });
     }
-    else {
-      setValues({ ...values, [name]: value, fees: false });
-      // check required fields are filled or not
-    }
+
     checkInputValidation(e);
   };
 
-  // upload data
-  const handleAdd = async (PersonalDetails) => {
-    await setDoc(doc(db, "students", user.uid), {
-      ...PersonalDetails,
-      timestamp: serverTimestamp(),
-    });
-
-    // to call new thanks component after adding data 
-    setIsThanks(true);
+  const formatAdharCardNumber = (adharCardNumber) => {
+    const strippedAdharCardNumber = adharCardNumber.replace(/\D/g, "");
+    const adharCardNumberArray = strippedAdharCardNumber.match(/.{1,4}/g) || [];
+    const formattedAdharCardNumber = adharCardNumberArray.join("-");
+    return formattedAdharCardNumber;
   };
 
+
+  // upload data
+  const handleAdd = async (PersonalDetails) => {
+    try {
+      await setDoc(doc(db, "students", user.uid), {
+        ...PersonalDetails,
+        timestamp: serverTimestamp(),
+      });
+      setIsThanks(true);
+    } catch (error) {
+      console.error(error);
+    }
+  };
   // upload files values to firebase storage
   const handleFileUpload = async (e) => {
     e.preventDefault();
@@ -265,21 +240,19 @@ export default function AdmissionContainer({ setIsThanks }) {
   };
 
   const handleFiles = (e) => {
-    const name = e.target.name;
-    const value = e.target.files[0];
-    setFileValues({ ...fileValues, [name]: value });
+    const { name, files } = e.target;
+    setFileValues({ ...fileValues, [name]: files[0] });
   };
-
-
+  
   const callFileInput = (e) => {
     e.preventDefault();
     e.target.parentElement.querySelector(".fileInput").click();
   };
-
+  
   const callConFileInput = (e) => {
     e.preventDefault();
-    e.target.parentElement.parentElement.querySelector(".fileInput").click();
-  }
+    e.target.closest(".fileInput").click();
+  };
 
   // check language
   const handleLanguage = () => {
@@ -310,52 +283,63 @@ export default function AdmissionContainer({ setIsThanks }) {
 
 
   const handleDiversifiedSubject = () => {
-    if (values.class <= 10 || values.class === "LKG" || values.class === "UKG" || values.class === "Nursery") {
-      setValues({ ...values, diversifiedSubjectOne: "Mathematics", diversifiedSubjectTwo: "Science", diversifiedSubjectThree: "Social Science", languageThree: "Sanskrit", group: "NA" });
+    if (
+      values.class <= 10 ||
+      values.class === "LKG" ||
+      values.class === "UKG" ||
+      values.class === "Nursery"
+    ) {
+      setValues({
+        ...values,
+        diversifiedSubjectOne: "Mathematics",
+        diversifiedSubjectTwo: "Science",
+        diversifiedSubjectThree: "Social Science",
+        languageThree: "Sanskrit",
+        group: "NA",
+      });
     } else {
-      if (values.group === "Mathematics") {
-        setValues({
-          ...values,
-          diversifiedSubjectOne: "Mathematics",
-          diversifiedSubjectTwo: "Physics",
-          diversifiedSubjectThree: "Chemistry",
-        });
-      } else if (values.group === "Biology") {
-        setValues({
-          ...values,
-          diversifiedSubjectOne: "Biology",
-          diversifiedSubjectTwo: "Physics",
-          diversifiedSubjectThree: "Chemistry",
-        });
-      } else if (values.group === "Commerce") {
-        setValues({
-          ...values,
-          diversifiedSubjectOne: "Economics",
-          diversifiedSubjectTwo: "Business Studies",
-          diversifiedSubjectThree: "Accountancy",
-        });
-      } else if (values.group === "Art") {
-        setValues({
-          ...values,
-          diversifiedSubjectOne: "Geography",
-          diversifiedSubjectTwo: "History",
-          diversifiedSubjectThree: "Political Science",
-        });
-      } else if (values.group === "Agriculture") {
-        setValues({
-          ...values,
-          diversifiedSubjectOne: "Elementry of Science",
-          diversifiedSubjectTwo: "Crop Production",
-          diversifiedSubjectThree: "Animal Husbandry",
-        });
-      } else {
-        setValues({
-          ...values,
-          diversifiedSubjectOne: "",
-          diversifiedSubjectTwo: "",
-          diversifiedSubjectThree: "",
-        });
+      let subjectOne;
+      let subjectTwo;
+      let subjectThree;
+
+      switch (values.group) {
+        case "Mathematics":
+          subjectOne = "Mathematics";
+          subjectTwo = "Physics";
+          subjectThree = "Chemistry";
+          break;
+        case "Biology":
+          subjectOne = "Biology";
+          subjectTwo = "Physics";
+          subjectThree = "Chemistry";
+          break;
+        case "Commerce":
+          subjectOne = "Economics";
+          subjectTwo = "Business Studies";
+          subjectThree = "Accountancy";
+          break;
+        case "Art":
+          subjectOne = "Geography";
+          subjectTwo = "History";
+          subjectThree = "Political Science";
+          break;
+        case "Agriculture":
+          subjectOne = "Elementary of Science";
+          subjectTwo = "Crop Production";
+          subjectThree = "Animal Husbandry";
+          break;
+        default:
+          subjectOne = "";
+          subjectTwo = "";
+          subjectThree = "";
       }
+
+      setValues({
+        ...values,
+        diversifiedSubjectOne: subjectOne,
+        diversifiedSubjectTwo: subjectTwo,
+        diversifiedSubjectThree: subjectThree,
+      });
     }
   };
 
