@@ -1,11 +1,12 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import AdmissionForm from "../../components/admissionForm";
 import AdmissionHeading from "../../components/admissionHeading";
 import AdmissionUpload from "../../components/admissionUpload";
 import { db, storage } from "../../lib/firebase.prod";
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import { v4 } from "uuid";
-import { addDoc, serverTimestamp, collection } from "firebase/firestore";
+import { doc, setDoc, serverTimestamp } from "firebase/firestore";
+import { FirebaseUserContext } from "../../context/firebase";
 
 const INITIAL_VALUES = {
   name: "",
@@ -110,6 +111,8 @@ export default function AdmissionContainer({ setIsThanks }) {
   const [checkClick, setCheckClick] = useState(false);
   // eslint-disable-next-line no-unused-vars
   const [isValid, setIsValid] = useState(false);
+  const { user } = useContext(FirebaseUserContext);
+  console.log(user)
 
   // use regex on input fields to validate
   const validate = (value, type) => {
@@ -212,7 +215,7 @@ export default function AdmissionContainer({ setIsThanks }) {
 
   // upload data
   const handleAdd = async (PersonalDetails) => {
-    await addDoc(collection(db, "students"), {
+    await setDoc(doc(db, "students", user.uid), {
       ...PersonalDetails,
       timestamp: serverTimestamp(),
     });
@@ -280,25 +283,30 @@ export default function AdmissionContainer({ setIsThanks }) {
 
   // check language
   const handleLanguage = () => {
-    if (values.medium === "English") {
-      setValues({ ...values, languageOne: "English", languageTwo: "Hindi" });
-    } else if (values.medium === "Hindi") {
-      setValues({ ...values, languageOne: "Hindi", languageTwo: "English" });
-    } else if (values.medium === "Urdu") {
-      setValues({ ...values, languageOne: "Urdu", languageTwo: "English" });
-    } else {
-      setValues({ ...values, languageOne: "", languageTwo: "", languageThree: "" });
+    switch (values.medium) {
+      case 'English':
+        setValues({ ...values, languageOne: 'English', languageTwo: 'Hindi' });
+        break;
+      case 'Hindi':
+        setValues({ ...values, languageOne: 'Hindi', languageTwo: 'English' });
+        break;
+      case 'Urdu':
+        setValues({ ...values, languageOne: 'Urdu', languageTwo: 'English' });
+        break;
+      default:
+        setValues({ ...values, languageOne: '', languageTwo: '', languageThree: '' });
     }
   };
 
   const handleLanguageThree = () => {
-    if (values.class <= 10) {
-      setValues({ ...values, languageThree: "Sanskrit" });
-    }
-    else {
-      setValues({ ...values, languageThree: "" });
-    }
-  }
+    setValues(prevValues => {
+      if (prevValues.class <= 10) {
+        return { ...prevValues, languageThree: "Sanskrit" };
+      } else {
+        return { ...prevValues, languageThree: "" };
+      }
+    });
+  };
 
 
   const handleDiversifiedSubject = () => {
